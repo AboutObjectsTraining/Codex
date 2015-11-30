@@ -1,0 +1,148 @@
+(
+	{
+		books = (
+			{
+				title = "The Tempest";
+				year = 2013;
+			},
+			{
+				title = "The Taming of the Shrew";
+				year = 2011;
+			},
+			{
+				title = Hamlet;
+				year = 2011;
+			},
+			{
+				title = "A Midsummer Night's Dream";
+				year = 2012;
+			},
+			{
+				title = "As You Like It";
+				year = 2011;
+			},
+			{
+				title = "Henry V";
+				year = 2011;
+			},
+		);
+		firstName = William;
+		lastName = Shakespeare;
+	},
+	{
+		books = (
+			{
+				title = "Pride and Prejudice";
+				year = 2000;
+			},
+			{
+				title = "Sense and Sensibility";
+				year = 2010;
+			},
+			{
+				title = "Mansfield Park";
+				year = 2014;
+			},
+			{
+				title = Persuasion;
+				year = 2015;
+			},
+		);
+		firstName = Jane;
+		lastName = Austen;
+	},
+	{
+		books = (
+			{
+				title = "For Whom the Bell Tolls";
+				year = 2009;
+			},
+			{
+				title = "The Old Man and the Sea";
+				year = 2010;
+			},
+			{
+				title = "To Have and Have Not";
+				year = 2014;
+			},
+			{
+				title = "The Snows of Kilamanjaro";
+				year = 2014;
+			},
+		);
+		firstName = Ernest;
+		lastName = Hemingway;
+	},
+	{
+		books = (
+			{
+				title = "A Tale of Two Cities";
+				year = 2012;
+			},
+			{
+				title = "Great Expectations";
+				year = 2014;
+			},
+			{
+				title = "A Christmas Carol";
+				year = 2011;
+			},
+		);
+		firstName = Charles;
+		lastName = Dickens;
+	},
+	{
+		books = (
+			{
+				title = "War of the Worlds";
+				year = 2000;
+			},
+			{
+				title = "The Time Machine";
+				year = 2010;
+			},
+			{
+				title = "The Invisible Man";
+				year = 2014;
+			},
+		);
+		firstName = "H. G.";
+		lastName = Wells;
+	},
+	{
+		books = (
+			{
+				title = "Adventures of Huckleberry Finn";
+				year = 2014;
+			},
+			{
+				title = "The Prince and the Pauper";
+				year = 2015;
+			},
+		);
+		firstName = Mark;
+		lastName = Twain;
+	},
+	{
+		books = (
+			{
+				title = Middlemarch;
+				year = 1997;
+			},
+			{
+				title = "Silas Marner";
+				year = 2009;
+			},
+			{
+				title = "Daniel Deronda";
+				year = 2012;
+			},
+			{
+				title = "The Mill on the Floss";
+				year = 1998;
+			},
+		);
+		firstName = George;
+		lastName = Eliot;
+	},
+)

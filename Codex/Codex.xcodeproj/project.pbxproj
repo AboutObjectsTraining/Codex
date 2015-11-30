@@ -7,81 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB0AD0471C0CA87800A5F8A2 /* Codex.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0461C0CA87800A5F8A2 /* Codex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB0AD04E1C0CA87800A5F8A2 /* Codex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0AD0431C0CA87800A5F8A2 /* Codex.framework */; };
-		AB0AD0531C0CA87800A5F8A2 /* CodexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0521C0CA87800A5F8A2 /* CodexTests.m */; };
+		AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB0AD0721C0CAA2900A5F8A2 /* Codex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */; };
+		AB0AD0771C0CAA2900A5F8A2 /* CodexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0761C0CAA2900A5F8A2 /* CodexTests.m */; };
+		AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */; };
+		AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AB0AD04F1C0CA87800A5F8A2 /* PBXContainerItemProxy */ = {
+		AB0AD0731C0CAA2900A5F8A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AB0AD03A1C0CA87800A5F8A2 /* Project object */;
+			containerPortal = AB0AD05E1C0CAA2900A5F8A2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AB0AD0421C0CA87800A5F8A2;
+			remoteGlobalIDString = AB0AD0661C0CAA2900A5F8A2;
 			remoteInfo = Codex;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB0AD0431C0CA87800A5F8A2 /* Codex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0AD0461C0CA87800A5F8A2 /* Codex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codex.h; sourceTree = "<group>"; };
-		AB0AD0481C0CA87800A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB0AD04D1C0CA87800A5F8A2 /* CodexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0AD0521C0CA87800A5F8A2 /* CodexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodexTests.m; sourceTree = "<group>"; };
-		AB0AD0541C0CA87800A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codex.h; sourceTree = "<group>"; };
+		AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0AD0761C0CAA2900A5F8A2 /* CodexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodexTests.m; sourceTree = "<group>"; };
+		AB0AD0781C0CAA2900A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXModelObject.h; sourceTree = "<group>"; };
+		AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXModelObject.m; sourceTree = "<group>"; };
+		AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+CDXAdditions.h"; sourceTree = "<group>"; };
+		AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+CDXAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AB0AD03F1C0CA87800A5F8A2 /* Frameworks */ = {
+		AB0AD0631C0CAA2900A5F8A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB0AD04A1C0CA87800A5F8A2 /* Frameworks */ = {
+		AB0AD06E1C0CAA2900A5F8A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0AD04E1C0CA87800A5F8A2 /* Codex.framework in Frameworks */,
+				AB0AD0721C0CAA2900A5F8A2 /* Codex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB0AD0391C0CA87800A5F8A2 = {
+		AB0AD05D1C0CAA2900A5F8A2 = {
 			isa = PBXGroup;
 			children = (
-				AB0AD0451C0CA87800A5F8A2 /* Codex */,
-				AB0AD0511C0CA87800A5F8A2 /* CodexTests */,
-				AB0AD0441C0CA87800A5F8A2 /* Products */,
+				AB0AD0691C0CAA2900A5F8A2 /* Codex */,
+				AB0AD0751C0CAA2900A5F8A2 /* CodexTests */,
+				AB0AD0681C0CAA2900A5F8A2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AB0AD0441C0CA87800A5F8A2 /* Products */ = {
+		AB0AD0681C0CAA2900A5F8A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AD0431C0CA87800A5F8A2 /* Codex.framework */,
-				AB0AD04D1C0CA87800A5F8A2 /* CodexTests.xctest */,
+				AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */,
+				AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AB0AD0451C0CA87800A5F8A2 /* Codex */ = {
+		AB0AD0691C0CAA2900A5F8A2 /* Codex */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AD0461C0CA87800A5F8A2 /* Codex.h */,
-				AB0AD0481C0CA87800A5F8A2 /* Info.plist */,
+				AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */,
+				AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */,
+				AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */,
+				AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */,
+				AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */,
+				AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */,
 			);
 			path = Codex;
 			sourceTree = "<group>";
 		};
-		AB0AD0511C0CA87800A5F8A2 /* CodexTests */ = {
+		AB0AD0751C0CAA2900A5F8A2 /* CodexTests */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AD0521C0CA87800A5F8A2 /* CodexTests.m */,
-				AB0AD0541C0CA87800A5F8A2 /* Info.plist */,
+				AB0AD0761C0CAA2900A5F8A2 /* CodexTests.m */,
+				AB0AD0781C0CAA2900A5F8A2 /* Info.plist */,
 			);
 			path = CodexTests;
 			sourceTree = "<group>";
@@ -89,25 +101,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AB0AD0401C0CA87800A5F8A2 /* Headers */ = {
+		AB0AD0641C0CAA2900A5F8A2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0AD0471C0CA87800A5F8A2 /* Codex.h in Headers */,
+				AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */,
+				AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */,
+				AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AB0AD0421C0CA87800A5F8A2 /* Codex */ = {
+		AB0AD0661C0CAA2900A5F8A2 /* Codex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB0AD0571C0CA87800A5F8A2 /* Build configuration list for PBXNativeTarget "Codex" */;
+			buildConfigurationList = AB0AD07B1C0CAA2900A5F8A2 /* Build configuration list for PBXNativeTarget "Codex" */;
 			buildPhases = (
-				AB0AD03E1C0CA87800A5F8A2 /* Sources */,
-				AB0AD03F1C0CA87800A5F8A2 /* Frameworks */,
-				AB0AD0401C0CA87800A5F8A2 /* Headers */,
-				AB0AD0411C0CA87800A5F8A2 /* Resources */,
+				AB0AD0621C0CAA2900A5F8A2 /* Sources */,
+				AB0AD0631C0CAA2900A5F8A2 /* Frameworks */,
+				AB0AD0641C0CAA2900A5F8A2 /* Headers */,
+				AB0AD0651C0CAA2900A5F8A2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -115,71 +129,71 @@
 			);
 			name = Codex;
 			productName = Codex;
-			productReference = AB0AD0431C0CA87800A5F8A2 /* Codex.framework */;
+			productReference = AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AB0AD04C1C0CA87800A5F8A2 /* CodexTests */ = {
+		AB0AD0701C0CAA2900A5F8A2 /* CodexTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB0AD05A1C0CA87800A5F8A2 /* Build configuration list for PBXNativeTarget "CodexTests" */;
+			buildConfigurationList = AB0AD07E1C0CAA2900A5F8A2 /* Build configuration list for PBXNativeTarget "CodexTests" */;
 			buildPhases = (
-				AB0AD0491C0CA87800A5F8A2 /* Sources */,
-				AB0AD04A1C0CA87800A5F8A2 /* Frameworks */,
-				AB0AD04B1C0CA87800A5F8A2 /* Resources */,
+				AB0AD06D1C0CAA2900A5F8A2 /* Sources */,
+				AB0AD06E1C0CAA2900A5F8A2 /* Frameworks */,
+				AB0AD06F1C0CAA2900A5F8A2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AB0AD0501C0CA87800A5F8A2 /* PBXTargetDependency */,
+				AB0AD0741C0CAA2900A5F8A2 /* PBXTargetDependency */,
 			);
 			name = CodexTests;
 			productName = CodexTests;
-			productReference = AB0AD04D1C0CA87800A5F8A2 /* CodexTests.xctest */;
+			productReference = AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AB0AD03A1C0CA87800A5F8A2 /* Project object */ = {
+		AB0AD05E1C0CAA2900A5F8A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "About Objects";
 				TargetAttributes = {
-					AB0AD0421C0CA87800A5F8A2 = {
+					AB0AD0661C0CAA2900A5F8A2 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
-					AB0AD04C1C0CA87800A5F8A2 = {
+					AB0AD0701C0CAA2900A5F8A2 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
-			buildConfigurationList = AB0AD03D1C0CA87800A5F8A2 /* Build configuration list for PBXProject "Codex" */;
+			buildConfigurationList = AB0AD0611C0CAA2900A5F8A2 /* Build configuration list for PBXProject "Codex" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = AB0AD0391C0CA87800A5F8A2;
-			productRefGroup = AB0AD0441C0CA87800A5F8A2 /* Products */;
+			mainGroup = AB0AD05D1C0CAA2900A5F8A2;
+			productRefGroup = AB0AD0681C0CAA2900A5F8A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB0AD0421C0CA87800A5F8A2 /* Codex */,
-				AB0AD04C1C0CA87800A5F8A2 /* CodexTests */,
+				AB0AD0661C0CAA2900A5F8A2 /* Codex */,
+				AB0AD0701C0CAA2900A5F8A2 /* CodexTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AB0AD0411C0CA87800A5F8A2 /* Resources */ = {
+		AB0AD0651C0CAA2900A5F8A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB0AD04B1C0CA87800A5F8A2 /* Resources */ = {
+		AB0AD06F1C0CAA2900A5F8A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,33 +203,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AB0AD03E1C0CA87800A5F8A2 /* Sources */ = {
+		AB0AD0621C0CAA2900A5F8A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */,
+				AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB0AD0491C0CA87800A5F8A2 /* Sources */ = {
+		AB0AD06D1C0CAA2900A5F8A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0AD0531C0CA87800A5F8A2 /* CodexTests.m in Sources */,
+				AB0AD0771C0CAA2900A5F8A2 /* CodexTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AB0AD0501C0CA87800A5F8A2 /* PBXTargetDependency */ = {
+		AB0AD0741C0CAA2900A5F8A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB0AD0421C0CA87800A5F8A2 /* Codex */;
-			targetProxy = AB0AD04F1C0CA87800A5F8A2 /* PBXContainerItemProxy */;
+			target = AB0AD0661C0CAA2900A5F8A2 /* Codex */;
+			targetProxy = AB0AD0731C0CAA2900A5F8A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		AB0AD0551C0CA87800A5F8A2 /* Debug */ = {
+		AB0AD0791C0CAA2900A5F8A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,6 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -262,7 +279,7 @@
 			};
 			name = Debug;
 		};
-		AB0AD0561C0CA87800A5F8A2 /* Release */ = {
+		AB0AD07A1C0CAA2900A5F8A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -303,7 +320,7 @@
 			};
 			name = Release;
 		};
-		AB0AD0581C0CA87800A5F8A2 /* Debug */ = {
+		AB0AD07C1C0CAA2900A5F8A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
@@ -319,7 +336,7 @@
 			};
 			name = Debug;
 		};
-		AB0AD0591C0CA87800A5F8A2 /* Release */ = {
+		AB0AD07D1C0CAA2900A5F8A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
@@ -335,7 +352,7 @@
 			};
 			name = Release;
 		};
-		AB0AD05B1C0CA87800A5F8A2 /* Debug */ = {
+		AB0AD07F1C0CAA2900A5F8A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = CodexTests/Info.plist;
@@ -345,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		AB0AD05C1C0CA87800A5F8A2 /* Release */ = {
+		AB0AD0801C0CAA2900A5F8A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = CodexTests/Info.plist;
@@ -358,32 +375,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB0AD03D1C0CA87800A5F8A2 /* Build configuration list for PBXProject "Codex" */ = {
+		AB0AD0611C0CAA2900A5F8A2 /* Build configuration list for PBXProject "Codex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB0AD0551C0CA87800A5F8A2 /* Debug */,
-				AB0AD0561C0CA87800A5F8A2 /* Release */,
+				AB0AD0791C0CAA2900A5F8A2 /* Debug */,
+				AB0AD07A1C0CAA2900A5F8A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB0AD0571C0CA87800A5F8A2 /* Build configuration list for PBXNativeTarget "Codex" */ = {
+		AB0AD07B1C0CAA2900A5F8A2 /* Build configuration list for PBXNativeTarget "Codex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB0AD0581C0CA87800A5F8A2 /* Debug */,
-				AB0AD0591C0CA87800A5F8A2 /* Release */,
+				AB0AD07C1C0CAA2900A5F8A2 /* Debug */,
+				AB0AD07D1C0CAA2900A5F8A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		AB0AD05A1C0CA87800A5F8A2 /* Build configuration list for PBXNativeTarget "CodexTests" */ = {
+		AB0AD07E1C0CAA2900A5F8A2 /* Build configuration list for PBXNativeTarget "CodexTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB0AD05B1C0CA87800A5F8A2 /* Debug */,
-				AB0AD05C1C0CA87800A5F8A2 /* Release */,
+				AB0AD07F1C0CAA2900A5F8A2 /* Debug */,
+				AB0AD0801C0CAA2900A5F8A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AB0AD03A1C0CA87800A5F8A2 /* Project object */;
+	rootObject = AB0AD05E1C0CAA2900A5F8A2 /* Project object */;
 }

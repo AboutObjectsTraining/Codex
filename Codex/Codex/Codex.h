@@ -17,3 +17,5 @@ FOUNDATION_EXPORT const unsigned char CodexVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <Codex/PublicHeader.h>
 
 
+#import <Codex/CDXModelObject.h>
+#import <Codex/NSPropertyDescription+CDXAdditions.h>
