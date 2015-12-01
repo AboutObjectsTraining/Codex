@@ -13,4 +13,9 @@
 
 // Insert code here to add functionality to your managed object subclass
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"title: %@; year: %@", self.title, self.year];
+}
+
 @end

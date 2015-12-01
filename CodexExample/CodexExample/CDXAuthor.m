@@ -10,6 +10,20 @@
 
 @implementation CDXAuthor
 
-// Insert code here to add functionality to your managed object subclass
+- (NSString *)fullName
+{
+    return (self.firstName && self.lastName ?
+            [NSString stringWithFormat:@"%@, %@", self.lastName, self.firstName] :
+            self.firstName ? self.firstName :
+            self.lastName ? self.lastName : nil);
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:
+            @"lastName: %@, firstName: %@\nbooks:\n%@",
+            self.lastName, self.firstName, self.books];
+}
+
 
 @end

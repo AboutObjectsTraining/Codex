@@ -18,17 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *firstName;
 @property (nullable, nonatomic, retain) NSString *lastName;
-@property (nullable, nonatomic, retain) NSSet<CDXBook *> *books;
-
-@end
-
-
-@interface CDXAuthor (CoreDataGeneratedAccessors)
-
-- (void)addBooksObject:(CDXBook *)value;
-- (void)removeBooksObject:(CDXBook *)value;
-- (void)addBooks:(NSSet<CDXBook *> *)values;
-- (void)removeBooks:(NSSet<CDXBook *> *)values;
+@property (nullable, nonatomic, readonly) NSString *fullName;
+@property (nullable, nonatomic, retain) NSOrderedSet<CDXBook *> *books;
 
 @end
 

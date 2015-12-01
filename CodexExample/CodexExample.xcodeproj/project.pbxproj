@@ -21,6 +21,8 @@
 		AB0AD0DA1C0CE49F00A5F8A2 /* Authors.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */; };
 		AB0AD0E31C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld */; };
 		AB0AD0E41C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld */; };
+		AB0AD0E71C0CF0D000A5F8A2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */; };
+		AB0AD0E81C0CF0D000A5F8A2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		AB0AD0C91C0CB84100A5F8A2 /* Codex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Codex.xcodeproj; path = ../../Codex/Codex.xcodeproj; sourceTree = "<group>"; };
 		AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Authors.plist; sourceTree = "<group>"; };
 		AB0AD0E21C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EnglishLiterature.xcdatamodel; sourceTree = "<group>"; };
+		AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AB0AD0E61C0CF0D000A5F8A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				AB0AD0C31C0CAF0600A5F8A2 /* Codex.framework */,
+				AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */,
+				AB0AD0E61C0CF0D000A5F8A2 /* README.md */,
 				AB0AD08C1C0CAA6800A5F8A2 /* CodexExample */,
 				AB0AD0A61C0CAA6800A5F8A2 /* CodexExampleTests */,
 				AB0AD08B1C0CAA6800A5F8A2 /* Products */,
@@ -280,6 +286,7 @@
 				AB0AD09D1C0CAA6800A5F8A2 /* LaunchScreen.storyboard in Resources */,
 				AB0AD0D91C0CE49F00A5F8A2 /* Authors.plist in Resources */,
 				AB0AD09A1C0CAA6800A5F8A2 /* Assets.xcassets in Resources */,
+				AB0AD0E71C0CF0D000A5F8A2 /* LICENSE.txt in Resources */,
 				AB0AD0981C0CAA6800A5F8A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0AD0E81C0CF0D000A5F8A2 /* LICENSE.txt in Resources */,
 				AB0AD0DA1C0CE49F00A5F8A2 /* Authors.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

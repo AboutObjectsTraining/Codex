@@ -10,16 +10,17 @@
 @interface CDXModelObject : NSObject
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forEntity:(NSEntityDescription *)entity;
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forRelationship:(NSRelationshipDescription *)relationship;
 
 
 // The following methods can be overridden by subclasses,
 // but your code shouldn't call them directly.
 
-- (void)setAttributeValuesWithDictionary:(NSDictionary *)dictionary;
-- (void)setRelationshipValuesWithDictionary:(NSDictionary *)dictionary;
+- (void)setAttributeValuesForKeysWithDictionary:(NSDictionary *)dictionary;
+- (void)setRelationshipValuesForKeysWithDictionary:(NSDictionary *)dictionary;
 
-- (NSArray *)toManyValueWithDictionaries:(NSArray *)dictionaries forRelationship:(NSRelationshipDescription *)relationship;
-- (CDXModelObject *)toOneValueWithDictionary:(NSDictionary *)dictionary forRelationship:(NSRelationshipDescription *)relationship;
+- (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionaries:(NSArray *)dictionaries;
+- (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionary:(NSDictionary *)dictionary;
 
 
 @end

@@ -68,5 +68,21 @@
     XCTAssertEqualObjects(book.title, bookDict[@"title"]);
 }
 
+- (void)testPopulateAuthor
+{
+    NSDictionary *authorDict = self.authorDicts[0];
+    NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict forEntity:authorEntity];
+    NSLog(@"%@", author);
+    XCTAssertEqualObjects(author.lastName, authorDict[@"lastName"]);
+    NSArray *bookDicts = authorDict[@"books"];
+    XCTAssertEqual(author.books.count, bookDicts.count);
+    XCTAssertEqualObjects([author.books[0] title], bookDicts[0][@"title"]);
+}
+
+- (void)testValueTransformers
+{
+    
+}
 
 @end

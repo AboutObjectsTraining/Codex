@@ -2,9 +2,7 @@
 // Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
 // See LICENSE.txt for this example's licensing information.
 //
-#import <objc/runtime.h>
 #import <CoreData/CoreData.h>
-
 #import "NSPropertyDescription+CDXAdditions.h"
 #import "CDXModelObject.h"
 
@@ -18,20 +16,28 @@
 
 @implementation CDXModelObject
 
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forRelationship:(NSRelationshipDescription *)relationship
+{
+    id value = [dictionary valueForKeyPath:relationship.externalKeyPath];
+    
+    return value = nil ? nil : [self modelObjectWithDictionary:value forEntity:relationship.entity];
+}
+
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forEntity:(NSEntityDescription *)entity
 {
-    CDXModelObject *modelObject = [[self alloc] init];
+    Class class = NSClassFromString(entity.managedObjectClassName);
+    CDXModelObject *modelObject = [[class alloc] init];
     modelObject.entity = entity;
     modelObject.snapshot = dictionary;
     
-    [modelObject setAttributeValuesWithDictionary:dictionary];
-    [modelObject setRelationshipValuesWithDictionary:dictionary];
+    [modelObject setAttributeValuesForKeysWithDictionary:dictionary];
+    [modelObject setRelationshipValuesForKeysWithDictionary:dictionary];
     
     return modelObject;
 }
 
 
-- (void)setAttributeValuesWithDictionary:(NSDictionary *)dictionary
+- (void)setAttributeValuesForKeysWithDictionary:(NSDictionary *)dictionary
 {
     for (NSString *key in self.entity.attributesByName)
     {
@@ -47,58 +53,53 @@
     }
 }
 
-- (void)setRelationshipValuesWithDictionary:(NSDictionary *)dictionary
+- (void)setRelationshipValuesForKeysWithDictionary:(NSDictionary *)dictionary
 {
     for (NSString *key in self.entity.relationshipsByName)
     {
         NSRelationshipDescription *relationship = self.entity.relationshipsByName[key];
         id value = [dictionary valueForKeyPath:relationship.externalKeyPath];
         
-        if (value != nil) // If value is nil, this is a back-pointer.
-        {
-            value = (relationship.isToMany ?
-                     [self toManyValueWithDictionaries:value forRelationship:relationship] :
-                     [self toOneValueWithDictionary:value forRelationship:relationship]);
+        // If there's no value corresponding to the external keypath, assume the
+        // the relationship represents a back-pointer, in which case do nothing.
+        if (value == nil) {
+            return;
         }
         
-        [self setValue:value forKey:key];
+        if (relationship.isToMany) {
+            [self setBothSidesOfRelationship:relationship withValuesFromDictionaries:value];
+        } else {
+            [self setBothSidesOfRelationship:relationship withValuesFromDictionary:value];
+        }
     }
 }
 
-- (NSArray *)toManyValueWithDictionaries:(NSArray *)dictionaries forRelationship:(NSRelationshipDescription *)relationship
+- (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionaries:(NSArray *)dictionaries
 {
     NSParameterAssert([dictionaries isKindOfClass:[NSArray class]]);
-    NSMutableArray *modelObjs = [NSMutableArray arrayWithCapacity:dictionaries.count];
     
-    for (NSDictionary *dictionary in dictionaries)
+    NSMutableArray *modelObjs = [NSMutableArray arrayWithCapacity:dictionaries.count];
+    for (NSDictionary *dict in dictionaries)
     {
-        id value = [dictionary valueForKeyPath:relationship.externalKeyPath];
-        NSEntityDescription *entity = self.entity.managedObjectModel.entitiesByName[relationship.name];
-        CDXModelObject *modelObj = [CDXModelObject modelObjectWithDictionary:value forEntity:entity];
-        
-        [modelObjs addObject:modelObj];
+        [modelObjs addObject:[CDXModelObject modelObjectWithDictionary:dict forEntity:relationship.destinationEntity]];
         if (relationship.inverseRelationship != nil) {
-            [modelObj setValue:self forKey:relationship.inverseRelationship.name];
+            [modelObjs.lastObject setValue:self forKey:relationship.inverseRelationship.name];
         }
     }
-    
-    return modelObjs;
+    [self setValue:modelObjs forKey:relationship.name];
 }
 
-- (CDXModelObject *)toOneValueWithDictionary:(NSDictionary *)dictionary forRelationship:(NSRelationshipDescription *)relationship
+- (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionary:(NSDictionary *)dictionary
 {
     NSParameterAssert([dictionary isKindOfClass:[NSDictionary class]]);
-    id value = [dictionary valueForKeyPath:relationship.externalKeyPath];
     
-    NSEntityDescription *entity = self.entity.managedObjectModel.entitiesByName[relationship.name];
-    CDXModelObject *modelObj = [CDXModelObject modelObjectWithDictionary:value forEntity:entity];
-    
+    CDXModelObject *modelObj = [CDXModelObject modelObjectWithDictionary:dictionary forRelationship:relationship];
     if (relationship.inverseRelationship != nil) {
         [modelObj setValue:self forKey:relationship.inverseRelationship.name];
     }
-    
-    return modelObj;
+    [self setValue:modelObj forKey:relationship.name];
 }
+
 
 //// TODO: Migrate to a category on NSArray?
 //- (NSArray *)dictionaryRepresentationForModelObjects:(NSArray *)modelObjects
