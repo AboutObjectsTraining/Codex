@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0721C0CAA2900A5F8A2 /* Codex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */; };
-		AB0AD0771C0CAA2900A5F8A2 /* CodexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0761C0CAA2900A5F8A2 /* CodexTests.m */; };
 		AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */; };
 		AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,7 +32,6 @@
 		AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codex.h; sourceTree = "<group>"; };
 		AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0AD0761C0CAA2900A5F8A2 /* CodexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodexTests.m; sourceTree = "<group>"; };
 		AB0AD0781C0CAA2900A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXModelObject.h; sourceTree = "<group>"; };
 		AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXModelObject.m; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		AB0AD0751C0CAA2900A5F8A2 /* CodexTests */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AD0761C0CAA2900A5F8A2 /* CodexTests.m */,
 				AB0AD0781C0CAA2900A5F8A2 /* Info.plist */,
 			);
 			path = CodexTests;
@@ -224,7 +221,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0AD0771C0CAA2900A5F8A2 /* CodexTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,8 @@
 		AB0AD0C41C0CAF0600A5F8A2 /* Codex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0AD0C31C0CAF0600A5F8A2 /* Codex.framework */; };
 		AB0AD0D91C0CE49F00A5F8A2 /* Authors.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */; };
 		AB0AD0DA1C0CE49F00A5F8A2 /* Authors.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */; };
-		AB0AD0E31C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld */; };
-		AB0AD0E41C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld */; };
+		AB0AD0E31C0CEC2100A5F8A2 /* Authors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */; };
+		AB0AD0E41C0CEC2100A5F8A2 /* Authors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */; };
 		AB0AD0E71C0CF0D000A5F8A2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */; };
 		AB0AD0E81C0CF0D000A5F8A2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
@@ -77,7 +77,7 @@
 		AB0AD0C31C0CAF0600A5F8A2 /* Codex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Codex.framework; path = "../../../../../../private/tmp/Debug-iphoneos/Codex.framework"; sourceTree = "<group>"; };
 		AB0AD0C91C0CB84100A5F8A2 /* Codex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Codex.xcodeproj; path = ../../Codex/Codex.xcodeproj; sourceTree = "<group>"; };
 		AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Authors.plist; sourceTree = "<group>"; };
-		AB0AD0E21C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EnglishLiterature.xcdatamodel; sourceTree = "<group>"; };
+		AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Authors.xcdatamodel; sourceTree = "<group>"; };
 		AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AB0AD0E61C0CF0D000A5F8A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 				AB0AD09B1C0CAA6800A5F8A2 /* LaunchScreen.storyboard */,
 				AB0AD09E1C0CAA6800A5F8A2 /* Info.plist */,
 				AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */,
-				AB0AD0E11C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld */,
+				AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */,
 				AB0AD08D1C0CAA6800A5F8A2 /* Supporting Files */,
 			);
 			path = CodexExample;
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD0BF1C0CAC1600A5F8A2 /* CDXAuthor.m in Sources */,
-				AB0AD0E31C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld in Sources */,
+				AB0AD0E31C0CEC2100A5F8A2 /* Authors.xcdatamodeld in Sources */,
 				AB0AD0C01C0CAC1600A5F8A2 /* CDXBook.m in Sources */,
 				AB0AD0951C0CAA6800A5F8A2 /* ViewController.m in Sources */,
 				AB0AD0921C0CAA6800A5F8A2 /* AppDelegate.m in Sources */,
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD0C21C0CAE9700A5F8A2 /* ExampleModelTests.m in Sources */,
-				AB0AD0E41C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld in Sources */,
+				AB0AD0E41C0CEC2100A5F8A2 /* Authors.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,13 +522,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AB0AD0E11C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodeld */ = {
+		AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AB0AD0E21C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodel */,
+				AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */,
 			);
-			currentVersion = AB0AD0E21C0CEC2100A5F8A2 /* EnglishLiterature.xcdatamodel */;
-			path = EnglishLiterature.xcdatamodeld;
+			currentVersion = AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */;
+			path = Authors.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

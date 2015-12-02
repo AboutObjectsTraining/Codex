@@ -26,7 +26,7 @@
     self.authorDicts = [NSArray arrayWithContentsOfURL:plistURL];
     XCTAssertNotNil(self.authorDicts);
     
-    NSURL *momdURL = [[NSBundle bundleForClass:self.class] URLForResource:@"EnglishLiterature" withExtension:@"momd"];
+    NSURL *momdURL = [[NSBundle bundleForClass:self.class] URLForResource:@"Authors" withExtension:@"momd"];
     NSLog(@"%@", momdURL);
     self.model = [[NSManagedObjectModel alloc] initWithContentsOfURL:momdURL];
     XCTAssertNotNil(self.model);
@@ -75,6 +75,7 @@
     CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict forEntity:authorEntity];
     NSLog(@"%@", author);
     XCTAssertEqualObjects(author.lastName, authorDict[@"lastName"]);
+    
     NSArray *bookDicts = authorDict[@"books"];
     XCTAssertEqual(author.books.count, bookDicts.count);
     XCTAssertEqualObjects([author.books[0] title], bookDicts[0][@"title"]);
@@ -94,6 +95,11 @@
     
     NSDictionary *dict = author.dictionaryRepresentation;
     NSLog(@"%@", dict);
+    XCTAssertEqualObjects(authorDict[@"lastName"], author.lastName);
+
+    NSArray *bookDicts = authorDict[@"books"];
+    XCTAssertEqual(bookDicts.count, author.books.count);
+    XCTAssertEqualObjects(bookDicts[0][@"title"], [author.books[0] title]);
 }
 
 @end
