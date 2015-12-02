@@ -9,11 +9,8 @@
 
 @interface CDXModelObject ()
 
-@property (strong, nonatomic) NSEntityDescription *entity;
-@property (copy, nonatomic) NSDictionary *snapshot;
-
-@property (readonly, nonatomic) NSDictionary *relationshipValues;
-@property (readonly, nonatomic) NSDictionary *attributeValues;
+@property (strong, readwrite, nonatomic) NSEntityDescription *entity;
+@property (copy, readwrite, nonatomic) NSDictionary *snapshot; // TODO: Implement `revert` method
 
 @end
 
@@ -37,6 +34,60 @@
     return modelObject;
 }
 
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *dictionaryRep = [self.attributeValues mutableCopy];
+    [dictionaryRep addEntriesFromDictionary:self.relationshipValues];
+    
+    return dictionaryRep;
+}
+
+@end
+
+
+@implementation CDXModelObject (Encoding)
+
+- (NSDictionary *)attributeValues
+{
+    NSDictionary *attributes = self.entity.attributesByName;
+    NSMutableDictionary *values = [[self dictionaryWithValuesForKeys:attributes.allKeys] mutableCopy];
+    [values removeObjectsForKeys:[values allKeysForObject:[NSNull null]]];
+    
+    for (NSString *key in attributes) {
+        NSAttributeDescription *attribute = attributes[key];
+        NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:attribute.valueTransformerName];
+        if (transformer != nil && values[key] != nil) {
+            values[key] = [transformer reverseTransformedValue:values[key]];
+        }
+    }
+    return values;
+}
+
+- (NSDictionary *)relationshipValues
+{
+    NSDictionary *relationships = self.entity.relationshipsByName;
+    NSMutableDictionary *values = [NSMutableDictionary dictionaryWithCapacity:relationships.count];
+    
+    NSDictionary *dict = [self dictionaryWithValuesForKeys:relationships.allKeys];
+    for (NSString *key in dict) {
+        id currVal = dict[key];
+        if (currVal != [NSNull null]) {
+            NSRelationshipDescription *relationship = relationships[key];
+            if (relationship.isToMany) {
+                values[key] = [currVal cdx_dictionaryRepresentation];
+            }
+            else if (relationship.inverseRelationship == nil) {
+                values[key] = [currVal dictionaryRepresentation];
+            }
+        }
+    }
+    return values;
+}
+
+@end
+
+
+@implementation CDXModelObject (Decoding)
 
 - (void)setAttributeValuesForKeysWithDictionary:(NSDictionary *)dictionary
 {
@@ -104,54 +155,5 @@
     }
     [self setValue:modelObj forKey:relationship.name];
 }
-
-- (NSDictionary *)relationshipValues
-{
-    NSDictionary *relationships = self.entity.relationshipsByName;
-    NSMutableDictionary *values = [NSMutableDictionary dictionaryWithCapacity:relationships.count];
-    
-    NSDictionary *dict = [self dictionaryWithValuesForKeys:relationships.allKeys];
-    for (NSString *key in dict) {
-        id currVal = dict[key];
-        if (currVal != [NSNull null]) {
-            NSRelationshipDescription *relationship = relationships[key];
-            if (relationship.isToMany) {
-                values[key] = [currVal cdx_dictionaryRepresentation];
-            }
-            else if (relationship.inverseRelationship == nil) {
-                values[key] = [currVal dictionaryRepresentation];
-            }
-        }
-    }
-    return values;
-}
-
-- (NSDictionary *)attributeValues
-{
-    NSDictionary *attributes = self.entity.attributesByName;
-    NSMutableDictionary *values = [[self dictionaryWithValuesForKeys:attributes.allKeys] mutableCopy];
-    [values removeObjectsForKeys:[values allKeysForObject:[NSNull null]]];
-    
-    for (NSString *key in attributes) {
-        NSAttributeDescription *attribute = attributes[key];
-        NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:attribute.valueTransformerName];
-        if (transformer != nil && values[key] != nil) {
-            values[key] = [transformer reverseTransformedValue:values[key]];
-        }
-    }
-    return values;
-}
-
-- (NSDictionary *)dictionaryRepresentation
-{
-    NSMutableDictionary *dictionaryRep = [self.attributeValues mutableCopy];
-    [dictionaryRep addEntriesFromDictionary:self.relationshipValues];
-    
-    return dictionaryRep;
-}
-
-
-
-
 
 @end
