@@ -12,7 +12,7 @@
     NSLog(@"Loaded %@", self);
 }
 
-- (NSString *)externalKeyPath
+- (NSString *)cdx_externalKeyPath
 {
     NSString *keyPath = self.userInfo[@"externalKeyPath"];
     

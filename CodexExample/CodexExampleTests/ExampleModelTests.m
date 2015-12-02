@@ -85,4 +85,15 @@
     
 }
 
+- (void)testDictionaryRepresentationOfAuthor
+{
+    NSDictionary *authorDict = self.authorDicts[0];
+    NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict forEntity:authorEntity];
+    NSLog(@"%@", author);
+    
+    NSDictionary *dict = author.dictionaryRepresentation;
+    NSLog(@"%@", dict);
+}
+
 @end

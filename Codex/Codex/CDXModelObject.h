@@ -22,5 +22,6 @@
 - (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionaries:(NSArray *)dictionaries;
 - (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionary:(NSDictionary *)dictionary;
 
+@property (readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 
 @end

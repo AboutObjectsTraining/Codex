@@ -14,6 +14,8 @@
 		AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */; };
 		AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */; };
+		AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */; };
+		AB0AD0EF1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXModelObject.m; sourceTree = "<group>"; };
 		AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+CDXAdditions.h"; sourceTree = "<group>"; };
 		AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+CDXAdditions.m"; sourceTree = "<group>"; };
+		AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CDXAdditions.h"; sourceTree = "<group>"; };
+		AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CDXAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */,
 				AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */,
+				AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */,
+				AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */,
 				AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */,
 				AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */,
 				AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */,
@@ -106,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */,
+				AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */,
 				AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */,
 				AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */,
 			);
@@ -209,6 +216,7 @@
 			files = (
 				AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */,
 				AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */,
+				AB0AD0EF1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
