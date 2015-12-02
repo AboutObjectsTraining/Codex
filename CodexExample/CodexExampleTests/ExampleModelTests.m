@@ -63,7 +63,7 @@
     NSDictionary *authorDict = self.authorDicts[0];
     NSDictionary *bookDict = authorDict[@"books"][0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Book"];
-    CDXBook *book = [CDXBook modelObjectWithDictionary:bookDict forEntity:authorEntity];
+    CDXBook *book = [CDXBook modelObjectWithDictionary:bookDict entity:authorEntity];
     NSLog(@"%@", book);
     XCTAssertEqualObjects(book.title, bookDict[@"title"]);
 }
@@ -72,7 +72,7 @@
 {
     NSDictionary *authorDict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict forEntity:authorEntity];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
     NSLog(@"%@", author);
     XCTAssertEqualObjects(author.lastName, authorDict[@"lastName"]);
     
@@ -90,7 +90,7 @@
 {
     NSDictionary *authorDict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict forEntity:authorEntity];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
     NSLog(@"%@", author);
     
     NSDictionary *dict = author.dictionaryRepresentation;

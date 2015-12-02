@@ -9,8 +9,9 @@
 
 @interface CDXModelObject : NSObject
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forEntity:(NSEntityDescription *)entity;
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forRelationship:(NSRelationshipDescription *)relationship;
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary entity:(NSEntityDescription *)entity;
+
+@property (readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 
 
 // The following methods can be overridden by subclasses,
@@ -22,6 +23,5 @@
 - (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionaries:(NSArray *)dictionaries;
 - (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionary:(NSDictionary *)dictionary;
 
-@property (readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 
 @end

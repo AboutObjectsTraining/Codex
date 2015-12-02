@@ -20,17 +20,14 @@
 
 @implementation CDXModelObject
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forRelationship:(NSRelationshipDescription *)relationship
-{
-    id value = [dictionary valueForKeyPath:relationship.cdx_externalKeyPath];
-    
-    return value = nil ? nil : [self modelObjectWithDictionary:value forEntity:relationship.entity];
-}
-
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary forEntity:(NSEntityDescription *)entity
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary entity:(NSEntityDescription *)entity
 {
     Class class = NSClassFromString(entity.managedObjectClassName);
     CDXModelObject *modelObject = [[class alloc] init];
+    if (modelObject == nil) {
+        return nil;
+    }
+    
     modelObject.entity = entity;
     modelObject.snapshot = dictionary;
     
@@ -84,21 +81,24 @@
 {
     NSParameterAssert([dictionaries isKindOfClass:[NSArray class]]);
     
-    NSMutableArray *modelObjs = [NSMutableArray arrayWithCapacity:dictionaries.count];
+    NSMutableArray *modelObjects = [NSMutableArray arrayWithCapacity:dictionaries.count];
     for (NSDictionary *dict in dictionaries) {
-        [modelObjs addObject:[CDXModelObject modelObjectWithDictionary:dict forEntity:relationship.destinationEntity]];
+        id modelObj = [self.class modelObjectWithDictionary:dict entity:relationship.destinationEntity];
+        [modelObjects addObject:modelObj];
         if (relationship.inverseRelationship != nil) {
-            [modelObjs.lastObject setValue:self forKey:relationship.inverseRelationship.name];
+            [modelObj setValue:self forKey:relationship.inverseRelationship.name];
         }
     }
-    [self setValue:modelObjs forKey:relationship.name];
+    [self setValue:modelObjects forKey:relationship.name];
 }
 
 - (void)setBothSidesOfRelationship:(NSRelationshipDescription *)relationship withValuesFromDictionary:(NSDictionary *)dictionary
 {
     NSParameterAssert([dictionary isKindOfClass:[NSDictionary class]]);
     
-    CDXModelObject *modelObj = [CDXModelObject modelObjectWithDictionary:dictionary forRelationship:relationship];
+    NSDictionary *dict = [dictionary valueForKeyPath:relationship.cdx_externalKeyPath];
+    id modelObj = (dict = nil ? nil :
+                   [self.class modelObjectWithDictionary:dict entity:relationship.entity]);
     if (relationship.inverseRelationship != nil) {
         [modelObj setValue:self forKey:relationship.inverseRelationship.name];
     }
