@@ -21,6 +21,8 @@
 		AB0AD0FC1C0FBC3000A5F8A2 /* CDXArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */; };
 		AB0AD1021C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD1001C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h */; };
 		AB0AD1031C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1011C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m */; };
+		AB0AD10D1C10DCA000A5F8A2 /* CDXDateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD10B1C10DCA000A5F8A2 /* CDXDateTransformer.h */; };
+		AB0AD10E1C10DCA000A5F8A2 /* CDXDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXArrayTransformer.m; sourceTree = "<group>"; };
 		AB0AD1001C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+CDXAdditions.h"; sourceTree = "<group>"; };
 		AB0AD1011C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+CDXAdditions.m"; sourceTree = "<group>"; };
+		AB0AD10B1C10DCA000A5F8A2 /* CDXDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXDateTransformer.h; sourceTree = "<group>"; };
+		AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXDateTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				AB0AD1011C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m */,
 				AB0AD0F11C0FAFC100A5F8A2 /* CDXURLTransformer.h */,
 				AB0AD0F21C0FAFC100A5F8A2 /* CDXURLTransformer.m */,
+				AB0AD10B1C10DCA000A5F8A2 /* CDXDateTransformer.h */,
+				AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */,
 				AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */,
 				AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */,
 				AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */,
@@ -128,6 +134,7 @@
 			files = (
 				AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */,
 				AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */,
+				AB0AD10D1C10DCA000A5F8A2 /* CDXDateTransformer.h in Headers */,
 				AB0AD1021C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h in Headers */,
 				AB0AD0F31C0FAFC100A5F8A2 /* CDXURLTransformer.h in Headers */,
 				AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */,
@@ -235,6 +242,7 @@
 				AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */,
 				AB0AD0FC1C0FBC3000A5F8A2 /* CDXArrayTransformer.m in Sources */,
 				AB0AD1031C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m in Sources */,
+				AB0AD10E1C10DCA000A5F8A2 /* CDXDateTransformer.m in Sources */,
 				AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */,
 				AB0AD0EF1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m in Sources */,
 				AB0AD0F41C0FAFC100A5F8A2 /* CDXURLTransformer.m in Sources */,

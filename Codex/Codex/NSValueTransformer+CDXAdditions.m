@@ -23,25 +23,12 @@ NSString *CDXTransformerNameForClass(Class targetType)
     return [NSString stringWithFormat:@"CDX%@Transformer", targetClassName];
 }
 
-NSString *CDXTransformerNameForClassName(NSString *className)
-{
-    return CDXTransformerNameForClass(NSClassFromString(className));
-}
-
 
 @implementation NSValueTransformer (CDXAdditions)
 
 + (NSValueTransformer *)cdx_valueTransformerForAttribute:(NSAttributeDescription *)attribute
 {
-    NSValueTransformer *transformer = [self valueTransformerForName:attribute.valueTransformerName];
-    
-    return (transformer ? transformer :
-            [self cdx_valueTransformerForClassName:attribute.entity.managedObjectClassName]);
-}
-
-+ (NSValueTransformer *)cdx_valueTransformerForClassName:(NSString *)className
-{
-    return [self valueTransformerForName:CDXTransformerNameForClassName(className)];
+    return [self valueTransformerForName:attribute.valueTransformerName];
 }
 
 @end

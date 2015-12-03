@@ -25,7 +25,7 @@
     
     NSURL *plistURL = [[NSBundle bundleForClass:self.class] URLForResource:@"Authors_v2" withExtension:@"plist"];
     self.responseDict = [NSDictionary dictionaryWithContentsOfURL:plistURL];
-    self.authorDicts = [NSArray arrayWithContentsOfURL:plistURL];
+    self.authorDicts = self.responseDict[@"authors"];
     XCTAssertNotNil(self.authorDicts);
     
     NSURL *momdURL = [[NSBundle bundleForClass:self.class] URLForResource:@"Authors" withExtension:@"momd"];
@@ -85,7 +85,14 @@
 
 - (void)testValueTransformers
 {
-    
+    NSDictionary *authorDict = self.authorDicts[0];
+    NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
+    NSLog(@"%@", author);
+
+    XCTAssertTrue([author.imageURL isKindOfClass:[NSURL class]]);
+    XCTAssertTrue([author.dateOfBirth isKindOfClass:[NSDate class]]);
+    XCTAssertTrue([[author.books[0] tags] isKindOfClass:[NSArray class]]);
 }
 
 - (void)testDictionaryRepresentationOfAuthor

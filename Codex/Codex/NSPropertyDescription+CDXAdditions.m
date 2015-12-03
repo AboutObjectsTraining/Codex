@@ -7,11 +7,6 @@
 
 @implementation NSPropertyDescription (CDXAdditions)
 
-+ (void)load
-{
-    NSLog(@"Loaded %@", self);
-}
-
 - (NSString *)cdx_externalKeyPath
 {
     NSString *keyPath = self.userInfo[@"externalKeyPath"];

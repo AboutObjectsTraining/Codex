@@ -11,7 +11,8 @@
 @interface CDXModelObject ()
 
 @property (strong, readwrite, nonatomic) NSEntityDescription *entity;
-@property (copy, readwrite, nonatomic) NSDictionary *snapshot; // TODO: Implement `revert` method
+// TODO: not currently used, but in future could support hasChanges, revert, etc.
+@property (copy, readwrite, nonatomic) NSDictionary *snapshot;
 
 @end
 
@@ -54,12 +55,10 @@
     NSMutableDictionary *values = [[self dictionaryWithValuesForKeys:attributes.allKeys] mutableCopy];
     [values removeObjectsForKeys:[values allKeysForObject:[NSNull null]]];
     
-    for (NSString *key in attributes)
-    {
-        NSAttributeDescription *attribute = attributes[key];
-        NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
-        if (transformer != nil && values[key] != nil && [transformer.class allowsReverseTransformation]) {
-            values[key] = [transformer reverseTransformedValue:values[key]];
+    for (NSString *key in attributes) {
+        NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attributes[key]];
+        if (transformer != nil) {
+            values[key] = [transformer transformedValue:values[key]];
         }
     }
     return values;
@@ -96,12 +95,12 @@
     for (NSString *key in self.entity.attributesByName)
     {
         NSAttributeDescription *attribute = self.entity.attributesByName[key];
-        // TODO: Test external keypath
         id value = [dictionary valueForKeyPath:attribute.cdx_externalKeyPath];
         
-        // TODO: Test value transformer registered in user dictionary
         NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
-        value = transformer == nil ? value : [transformer transformedValue:value];
+        if (transformer != nil && [transformer.class allowsReverseTransformation]) {
+            value = [transformer reverseTransformedValue:value];
+        }
         
         [self setValue:value forKey:key];
     }

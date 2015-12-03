@@ -16,10 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CDXAuthor : CDXModelObject
 
+@property (nonatomic, assign) NSInteger externalID;
+
 @property (nullable, nonatomic, retain) NSString *firstName;
 @property (nullable, nonatomic, retain) NSString *lastName;
 @property (nullable, nonatomic, readonly) NSString *fullName;
-@property (nullable, nonatomic, retain) NSOrderedSet<CDXBook *> *books;
+@property (nullable, nonatomic, retain) NSArray<CDXBook *> *books;
+
+@property (nullable, nonatomic, retain) NSDate *dateOfBirth;
+@property (nullable, nonatomic, retain) NSURL *imageURL;
 
 @end
 

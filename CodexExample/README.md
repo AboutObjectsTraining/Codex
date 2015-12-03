@@ -11,17 +11,19 @@ A framework and example app that demonstrates the following:
 
 ## Screenshots
 
-![](Screenshots/reading-list.png)
-<span style="width: 36px;">&nbsp;&nbsp;&nbsp;<span>
-![](Screenshots/swiped-cell.png)
-<span style="width: 36px;">&nbsp;&nbsp;&nbsp;<span>
-![](Screenshots/action-sheet.png)
-<span style="width: 36px;">&nbsp;&nbsp;&nbsp;<span>
-![](Screenshots/book-detail.png)
+Coming soon.
+
+<!--![](Screenshots/reading-list.png)-->
+<!--<span style="width: 36px;">&nbsp;&nbsp;&nbsp;<span>-->
+<!--![](Screenshots/swiped-cell.png)-->
+<!--<span style="width: 36px;">&nbsp;&nbsp;&nbsp;<span>-->
+<!--![](Screenshots/action-sheet.png)-->
+<!--<span style="width: 36px;">&nbsp;&nbsp;&nbsp;<span>-->
+<!--![](Screenshots/book-detail.png)-->
 
 ## Targets
 
-**CodexWorkspace is a workspace that houses the following projects:
+**CodexWorkspace houses the following projects:
 
 * **Codex**
 

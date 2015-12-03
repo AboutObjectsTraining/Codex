@@ -23,6 +23,8 @@
 		AB0AD0E41C0CEC2100A5F8A2 /* Authors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */; };
 		AB0AD0E71C0CF0D000A5F8A2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */; };
 		AB0AD0E81C0CF0D000A5F8A2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */; };
+		AB0AD1051C10CFFA00A5F8A2 /* Authors_v2.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1041C10CFFA00A5F8A2 /* Authors_v2.plist */; };
+		AB0AD1061C10D6A300A5F8A2 /* Authors_v2.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1041C10CFFA00A5F8A2 /* Authors_v2.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Authors.xcdatamodel; sourceTree = "<group>"; };
 		AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AB0AD0E61C0CF0D000A5F8A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AB0AD0FD1C0FBE1700A5F8A2 /* Authors 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Authors 2.xcdatamodel"; sourceTree = "<group>"; };
+		AB0AD1041C10CFFA00A5F8A2 /* Authors_v2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Authors_v2.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				AB0AD09B1C0CAA6800A5F8A2 /* LaunchScreen.storyboard */,
 				AB0AD09E1C0CAA6800A5F8A2 /* Info.plist */,
 				AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */,
+				AB0AD1041C10CFFA00A5F8A2 /* Authors_v2.plist */,
 				AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */,
 				AB0AD08D1C0CAA6800A5F8A2 /* Supporting Files */,
 			);
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD09D1C0CAA6800A5F8A2 /* LaunchScreen.storyboard in Resources */,
+				AB0AD1051C10CFFA00A5F8A2 /* Authors_v2.plist in Resources */,
 				AB0AD0D91C0CE49F00A5F8A2 /* Authors.plist in Resources */,
 				AB0AD09A1C0CAA6800A5F8A2 /* Assets.xcassets in Resources */,
 				AB0AD0E71C0CF0D000A5F8A2 /* LICENSE.txt in Resources */,
@@ -295,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0AD1061C10D6A300A5F8A2 /* Authors_v2.plist in Resources */,
 				AB0AD0E81C0CF0D000A5F8A2 /* LICENSE.txt in Resources */,
 				AB0AD0DA1C0CE49F00A5F8A2 /* Authors.plist in Resources */,
 			);
@@ -525,9 +532,10 @@
 		AB0AD0E11C0CEC2100A5F8A2 /* Authors.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AB0AD0FD1C0FBE1700A5F8A2 /* Authors 2.xcdatamodel */,
 				AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */,
 			);
-			currentVersion = AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */;
+			currentVersion = AB0AD0FD1C0FBE1700A5F8A2 /* Authors 2.xcdatamodel */;
 			path = Authors.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
