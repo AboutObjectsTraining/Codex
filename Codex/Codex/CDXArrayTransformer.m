@@ -2,7 +2,7 @@
 // Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
 // See LICENSE.txt for this example's licensing information.
 //
-#import "CDXTransformerUtilities.h"
+#import "NSValueTransformer+CDXAdditions.h"
 #import "CDXArrayTransformer.h"
 
 @implementation CDXArrayTransformer

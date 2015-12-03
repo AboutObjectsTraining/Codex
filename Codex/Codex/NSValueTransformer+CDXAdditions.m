@@ -3,7 +3,7 @@
 // See LICENSE.txt for this example's licensing information.
 //
 
-#import "CDXTransformerUtilities.h"
+#import "NSValueTransformer+CDXAdditions.h"
 
 void CDXRegisterValueTransformerClass(Class transformerClass)
 {
@@ -28,3 +28,20 @@ NSString *CDXTransformerNameForClassName(NSString *className)
     return CDXTransformerNameForClass(NSClassFromString(className));
 }
 
+
+@implementation NSValueTransformer (CDXAdditions)
+
++ (NSValueTransformer *)cdx_valueTransformerForAttribute:(NSAttributeDescription *)attribute
+{
+    NSValueTransformer *transformer = [self valueTransformerForName:attribute.valueTransformerName];
+    
+    return (transformer ? transformer :
+            [self cdx_valueTransformerForClassName:attribute.entity.managedObjectClassName]);
+}
+
++ (NSValueTransformer *)cdx_valueTransformerForClassName:(NSString *)className
+{
+    return [self valueTransformerForName:CDXTransformerNameForClassName(className)];
+}
+
+@end

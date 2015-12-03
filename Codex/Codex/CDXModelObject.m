@@ -5,7 +5,7 @@
 #import <CoreData/CoreData.h>
 #import "NSArray+CDXAdditions.h"
 #import "NSPropertyDescription+CDXAdditions.h"
-#import "CDXTransformerUtilities.h"
+#import "NSValueTransformer+CDXAdditions.h"
 #import "CDXModelObject.h"
 
 @interface CDXModelObject ()
@@ -57,12 +57,8 @@
     for (NSString *key in attributes)
     {
         NSAttributeDescription *attribute = attributes[key];
-        NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:attribute.valueTransformerName];
-        if (transformer == nil) {
-            transformer = CDXTransformerNameForClassName(self.entity.managedObjectClassName);
-        }
-        
-        if (transformer != nil && values[key] != nil && transformer.allowsReverseTransformation) {
+        NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
+        if (transformer != nil && values[key] != nil && [transformer.class allowsReverseTransformation]) {
             values[key] = [transformer reverseTransformedValue:values[key]];
         }
     }
@@ -100,18 +96,12 @@
     for (NSString *key in self.entity.attributesByName)
     {
         NSAttributeDescription *attribute = self.entity.attributesByName[key];
+        // TODO: Test external keypath
         id value = [dictionary valueForKeyPath:attribute.cdx_externalKeyPath];
         
         // TODO: Test value transformer registered in user dictionary
-        
-        NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:attribute.valueTransformerName];
-        if (transformer == nil) {
-            transformer = CDXTransformerNameForClassName(self.entity.managedObjectClassName);
-        }
-        
-        if (transformer != nil) {
-            value = [transformer transformedValue:value];
-        }
+        NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
+        value = transformer == nil ? value : [transformer transformedValue:value];
         
         [self setValue:value forKey:key];
     }

@@ -14,6 +14,7 @@
 
 @interface ExampleModelTests : XCTestCase
 @property (strong, nonatomic) NSManagedObjectModel *model;
+@property (strong, nonatomic) NSDictionary *responseDict;
 @property (strong, nonatomic) NSArray *authorDicts;
 @end
 
@@ -22,7 +23,8 @@
 - (void)setUp {
     [super setUp];
     
-    NSURL *plistURL = [[NSBundle bundleForClass:self.class] URLForResource:@"Authors" withExtension:@"plist"];
+    NSURL *plistURL = [[NSBundle bundleForClass:self.class] URLForResource:@"Authors_v2" withExtension:@"plist"];
+    self.responseDict = [NSDictionary dictionaryWithContentsOfURL:plistURL];
     self.authorDicts = [NSArray arrayWithContentsOfURL:plistURL];
     XCTAssertNotNil(self.authorDicts);
     
