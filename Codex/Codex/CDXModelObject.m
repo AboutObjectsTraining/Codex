@@ -5,6 +5,7 @@
 #import <CoreData/CoreData.h>
 #import "NSArray+CDXAdditions.h"
 #import "NSPropertyDescription+CDXAdditions.h"
+#import "CDXTransformerUtilities.h"
 #import "CDXModelObject.h"
 
 @interface CDXModelObject ()
@@ -53,10 +54,15 @@
     NSMutableDictionary *values = [[self dictionaryWithValuesForKeys:attributes.allKeys] mutableCopy];
     [values removeObjectsForKeys:[values allKeysForObject:[NSNull null]]];
     
-    for (NSString *key in attributes) {
+    for (NSString *key in attributes)
+    {
         NSAttributeDescription *attribute = attributes[key];
         NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:attribute.valueTransformerName];
-        if (transformer != nil && values[key] != nil) {
+        if (transformer == nil) {
+            transformer = CDXTransformerNameForClassName(self.entity.managedObjectClassName);
+        }
+        
+        if (transformer != nil && values[key] != nil && transformer.allowsReverseTransformation) {
             values[key] = [transformer reverseTransformedValue:values[key]];
         }
     }
@@ -96,9 +102,13 @@
         NSAttributeDescription *attribute = self.entity.attributesByName[key];
         id value = [dictionary valueForKeyPath:attribute.cdx_externalKeyPath];
         
-        // TODO: Register value transformers
+        // TODO: Test value transformer registered in user dictionary
         
         NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:attribute.valueTransformerName];
+        if (transformer == nil) {
+            transformer = CDXTransformerNameForClassName(self.entity.managedObjectClassName);
+        }
+        
         if (transformer != nil) {
             value = [transformer transformedValue:value];
         }

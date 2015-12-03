@@ -15,6 +15,12 @@
 		AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */; };
 		AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */; };
 		AB0AD0EF1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */; };
+		AB0AD0F31C0FAFC100A5F8A2 /* CDXURLTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F11C0FAFC100A5F8A2 /* CDXURLTransformer.h */; };
+		AB0AD0F41C0FAFC100A5F8A2 /* CDXURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0F21C0FAFC100A5F8A2 /* CDXURLTransformer.m */; };
+		AB0AD0F71C0FB2DE00A5F8A2 /* CDXTransformerUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F51C0FB2DE00A5F8A2 /* CDXTransformerUtilities.h */; };
+		AB0AD0F81C0FB2DE00A5F8A2 /* CDXTransformerUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0F61C0FB2DE00A5F8A2 /* CDXTransformerUtilities.m */; };
+		AB0AD0FB1C0FBC3000A5F8A2 /* CDXArrayTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */; };
+		AB0AD0FC1C0FBC3000A5F8A2 /* CDXArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +45,12 @@
 		AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+CDXAdditions.m"; sourceTree = "<group>"; };
 		AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CDXAdditions.h"; sourceTree = "<group>"; };
 		AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CDXAdditions.m"; sourceTree = "<group>"; };
+		AB0AD0F11C0FAFC100A5F8A2 /* CDXURLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXURLTransformer.h; sourceTree = "<group>"; };
+		AB0AD0F21C0FAFC100A5F8A2 /* CDXURLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXURLTransformer.m; sourceTree = "<group>"; };
+		AB0AD0F51C0FB2DE00A5F8A2 /* CDXTransformerUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXTransformerUtilities.h; sourceTree = "<group>"; };
+		AB0AD0F61C0FB2DE00A5F8A2 /* CDXTransformerUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXTransformerUtilities.m; sourceTree = "<group>"; };
+		AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXArrayTransformer.h; sourceTree = "<group>"; };
+		AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXArrayTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,12 @@
 				AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */,
 				AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */,
 				AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */,
+				AB0AD0F11C0FAFC100A5F8A2 /* CDXURLTransformer.h */,
+				AB0AD0F21C0FAFC100A5F8A2 /* CDXURLTransformer.m */,
+				AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */,
+				AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */,
+				AB0AD0F51C0FB2DE00A5F8A2 /* CDXTransformerUtilities.h */,
+				AB0AD0F61C0FB2DE00A5F8A2 /* CDXTransformerUtilities.m */,
 				AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */,
 				AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */,
 			);
@@ -109,9 +127,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */,
+				AB0AD0F71C0FB2DE00A5F8A2 /* CDXTransformerUtilities.h in Headers */,
 				AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */,
+				AB0AD0F31C0FAFC100A5F8A2 /* CDXURLTransformer.h in Headers */,
 				AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */,
 				AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */,
+				AB0AD0FB1C0FBC3000A5F8A2 /* CDXArrayTransformer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */,
+				AB0AD0FC1C0FBC3000A5F8A2 /* CDXArrayTransformer.m in Sources */,
 				AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */,
 				AB0AD0EF1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m in Sources */,
+				AB0AD0F41C0FAFC100A5F8A2 /* CDXURLTransformer.m in Sources */,
+				AB0AD0F81C0FB2DE00A5F8A2 /* CDXTransformerUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
