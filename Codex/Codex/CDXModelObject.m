@@ -52,37 +52,46 @@
 - (NSDictionary *)attributeValues
 {
     NSDictionary *attributes = self.entity.attributesByName;
-    NSMutableDictionary *values = [[self dictionaryWithValuesForKeys:attributes.allKeys] mutableCopy];
-    [values removeObjectsForKeys:[values allKeysForObject:[NSNull null]]];
+    NSDictionary *outboundVals = [self dictionaryWithValuesForKeys:attributes.allKeys];
+    NSMutableDictionary *attributeVals = [NSMutableDictionary dictionary];
     
-    for (NSString *key in attributes) {
-        NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attributes[key]];
-        if (transformer != nil) {
-            values[key] = [transformer transformedValue:values[key]];
-        }
+    for (NSAttributeDescription *attribute in attributes.allValues) {
+        NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
+        id value = [outboundVals valueForKeyPath:attribute.name];
+        value = transformer == nil ? value : [transformer transformedValue:value];
+        
+        // TODO: Construct intervening objects if they don't exist yet.
+        [attributeVals setValue:value forKeyPath:attribute.cdx_keyPath];
     }
-    return values;
+    return attributeVals;
 }
+
 
 - (NSDictionary *)relationshipValues
 {
     NSDictionary *relationships = self.entity.relationshipsByName;
-    NSMutableDictionary *values = [NSMutableDictionary dictionaryWithCapacity:relationships.count];
+    NSDictionary *outboundVals = [self dictionaryWithValuesForKeys:relationships.allKeys];
+    NSMutableDictionary *relationshipVals = [NSMutableDictionary dictionary];
     
-    NSDictionary *dict = [self dictionaryWithValuesForKeys:relationships.allKeys];
-    for (NSString *key in dict) {
-        id currVal = dict[key];
-        if (currVal != [NSNull null]) {
-            NSRelationshipDescription *relationship = relationships[key];
+    for (NSRelationshipDescription *relationship in relationships.allValues) {
+        id val = outboundVals[relationship.name];
+        if (val != [NSNull null]) {
             if (relationship.isToMany) {
-                values[key] = [currVal cdx_dictionaryRepresentation];
+                relationshipVals[relationship.cdx_keyPath] = [val cdx_dictionaryRepresentation];
             }
             else if (relationship.inverseRelationship == nil) {
-                values[key] = [currVal dictionaryRepresentation];
+                relationshipVals[relationship.cdx_keyPath] = [val dictionaryRepresentation];
             }
         }
     }
-    return values;
+    return relationshipVals;
+}
+
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+    value = (value == [NSNull null] ? nil : value);
+    
+    [super setValue:value forKey:key];
 }
 
 @end
@@ -92,10 +101,12 @@
 
 - (void)setAttributeValuesForKeysWithDictionary:(NSDictionary *)dictionary
 {
-    for (NSString *key in self.entity.attributesByName)
+    NSDictionary *attributes = self.entity.attributesByName;
+    
+    for (NSString *key in attributes)
     {
-        NSAttributeDescription *attribute = self.entity.attributesByName[key];
-        id value = [dictionary valueForKeyPath:attribute.cdx_externalKeyPath];
+        NSAttributeDescription *attribute = attributes[key];
+        id value = [dictionary valueForKeyPath:attribute.cdx_keyPath];
         
         NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
         if (transformer != nil && [transformer.class allowsReverseTransformation]) {
@@ -108,10 +119,12 @@
 
 - (void)setRelationshipValuesForKeysWithDictionary:(NSDictionary *)dictionary
 {
-    for (NSString *key in self.entity.relationshipsByName)
+    NSDictionary *relationships = self.entity.relationshipsByName;
+
+    for (NSString *key in relationships)
     {
-        NSRelationshipDescription *relationship = self.entity.relationshipsByName[key];
-        id value = [dictionary valueForKeyPath:relationship.cdx_externalKeyPath];
+        NSRelationshipDescription *relationship = relationships[key];
+        id value = [dictionary valueForKeyPath:relationship.cdx_keyPath];
         
         // If there's no value corresponding to the external keypath, assume the
         // the relationship represents a back-pointer, in which case do nothing.
@@ -131,7 +144,7 @@
 {
     NSParameterAssert([dictionaries isKindOfClass:[NSArray class]]);
     
-    NSMutableArray *modelObjects = [NSMutableArray arrayWithCapacity:dictionaries.count];
+    NSMutableArray *modelObjects = [NSMutableArray array];
     for (NSDictionary *dict in dictionaries) {
         id modelObj = [self.class modelObjectWithDictionary:dict entity:relationship.destinationEntity];
         [modelObjects addObject:modelObj];
@@ -146,7 +159,7 @@
 {
     NSParameterAssert([dictionary isKindOfClass:[NSDictionary class]]);
     
-    NSDictionary *dict = [dictionary valueForKeyPath:relationship.cdx_externalKeyPath];
+    NSDictionary *dict = [dictionary valueForKeyPath:relationship.cdx_keyPath];
     id modelObj = (dict = nil ? nil :
                    [self.class modelObjectWithDictionary:dict entity:relationship.entity]);
     if (relationship.inverseRelationship != nil) {

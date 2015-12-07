@@ -25,7 +25,9 @@
 // Encode
 - (id)transformedValue:(id)value
 {
-    return value == nil ? nil : [value componentsJoinedByString:@","];
+    return (value == [NSNull null] ? value :
+            value == nil ? nil :
+            [value componentsJoinedByString:@","]);
 }
 
 // Decode

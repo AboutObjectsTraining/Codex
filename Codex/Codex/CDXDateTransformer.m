@@ -50,7 +50,7 @@ NSString * const CDXExternalDateFormat = @"yyyy-MM-dd";
 // Encode
 - (id)transformedValue:(id)value
 {
-    return value == nil ? nil : [[self.class presentationDateFormatter] stringFromDate:value];
+    return value == nil ? nil : [[self.class externalDateFormatter] stringFromDate:value];
 }
 
 // Decode

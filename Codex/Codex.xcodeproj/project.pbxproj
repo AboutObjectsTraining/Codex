@@ -55,6 +55,7 @@
 		AB0AD1011C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+CDXAdditions.m"; sourceTree = "<group>"; };
 		AB0AD10B1C10DCA000A5F8A2 /* CDXDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXDateTransformer.h; sourceTree = "<group>"; };
 		AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXDateTransformer.m; sourceTree = "<group>"; };
+		AB0AD10F1C12097400A5F8A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		AB0AD05D1C0CAA2900A5F8A2 = {
 			isa = PBXGroup;
 			children = (
+				AB0AD10F1C12097400A5F8A2 /* README.md */,
 				AB0AD0691C0CAA2900A5F8A2 /* Codex */,
 				AB0AD0751C0CAA2900A5F8A2 /* CodexTests */,
 				AB0AD0681C0CAA2900A5F8A2 /* Products */,

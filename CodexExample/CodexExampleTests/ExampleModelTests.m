@@ -83,16 +83,26 @@
     XCTAssertEqualObjects([author.books[0] title], bookDicts[0][@"title"]);
 }
 
-- (void)testValueTransformers
+- (void)testValueTransformersAndExternalKeypaths
 {
-    NSDictionary *authorDict = self.authorDicts[0];
+    NSDictionary *dict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:dict entity:authorEntity];
     NSLog(@"%@", author);
 
     XCTAssertTrue([author.imageURL isKindOfClass:[NSURL class]]);
     XCTAssertTrue([author.dateOfBirth isKindOfClass:[NSDate class]]);
     XCTAssertTrue([[author.books[0] tags] isKindOfClass:[NSArray class]]);
+    
+    NSDictionary *authorDict = author.dictionaryRepresentation;
+    NSLog(@"%@", authorDict);
+    XCTAssertTrue([authorDict[@"imageURL"] isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects([authorDict[@"author_id"] description], self.authorDicts[0][@"author_id"]);
+    XCTAssertEqualObjects(authorDict[@"born"], self.authorDicts[0][@"born"]);
+    
+    NSDictionary *bookDict = authorDict[@"books"][0];
+    XCTAssertEqualObjects([bookDict[@"book_id"] description], self.authorDicts[0][@"books"][0][@"book_id"]);
+    XCTAssertEqualObjects([bookDict[@"tags"] description], self.authorDicts[0][@"books"][0][@"tags"]);
 }
 
 - (void)testDictionaryRepresentationOfAuthor

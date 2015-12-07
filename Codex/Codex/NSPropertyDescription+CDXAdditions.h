@@ -7,6 +7,6 @@
 
 @interface NSPropertyDescription (CDXAdditions)
 
-@property (readonly, nonnull, nonatomic) NSString *cdx_externalKeyPath;
+@property (readonly, nonnull, nonatomic) NSString *cdx_keyPath;
 
 @end

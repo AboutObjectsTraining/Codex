@@ -7,7 +7,7 @@
 
 @implementation NSPropertyDescription (CDXAdditions)
 
-- (NSString *)cdx_externalKeyPath
+- (NSString *)cdx_keyPath
 {
     NSString *keyPath = self.userInfo[@"externalKeyPath"];
     
