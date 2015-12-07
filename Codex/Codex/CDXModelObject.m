@@ -36,12 +36,29 @@
     return modelObject;
 }
 
++ (instancetype)modelObjectWithJSONString:(NSString *)JSONString entity:(NSEntityDescription *)entity
+{
+    NSData *data = [JSONString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    
+    return [self modelObjectWithDictionary:dict entity:entity];
+}
+
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *dictionaryRep = [self.attributeValues mutableCopy];
     [dictionaryRep addEntriesFromDictionary:self.relationshipValues];
     
     return dictionaryRep;
+}
+
+// TODO: Migrate to store controller
+- (NSString *)JSONRepresentation
+{
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self.dictionaryRepresentation
+                                                   options:NSJSONWritingPrettyPrinted
+                                                     error:NULL];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end

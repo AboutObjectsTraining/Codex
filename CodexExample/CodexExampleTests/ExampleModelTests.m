@@ -102,7 +102,7 @@
     
     NSDictionary *bookDict = authorDict[@"books"][0];
     XCTAssertEqualObjects([bookDict[@"book_id"] description], self.authorDicts[0][@"books"][0][@"book_id"]);
-    XCTAssertEqualObjects([bookDict[@"tags"] description], self.authorDicts[0][@"books"][0][@"tags"]);
+    XCTAssertEqualObjects(bookDict[@"tags"], self.authorDicts[0][@"books"][0][@"tags"]);
 }
 
 - (void)testDictionaryRepresentationOfAuthor
@@ -115,10 +115,55 @@
     NSDictionary *dict = author.dictionaryRepresentation;
     NSLog(@"%@", dict);
     XCTAssertEqualObjects(authorDict[@"lastName"], author.lastName);
-
+    
     NSArray *bookDicts = authorDict[@"books"];
     XCTAssertEqual(bookDicts.count, author.books.count);
     XCTAssertEqualObjects(bookDicts[0][@"title"], [author.books[0] title]);
+}
+
+- (void)testJSONRepresentationOfAuthor
+{
+    NSDictionary *authorDict = self.authorDicts[0];
+    NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
+    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
+    NSLog(@"%@", author);
+    
+    XCTAssertTrue([author.imageURL isKindOfClass:[NSURL class]]);
+    XCTAssertTrue([author.dateOfBirth isKindOfClass:[NSDate class]]);
+    XCTAssertTrue([[author.books[0] tags] isKindOfClass:[NSArray class]]);
+    
+    NSString *authorJSONString = author.JSONRepresentation;
+    NSLog(@"%@", authorJSONString);
+    
+    NSData *authorData = [authorJSONString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *authorJSONDict = [NSJSONSerialization JSONObjectWithData:authorData options:0 error:NULL];
+    
+    XCTAssertTrue([authorJSONDict[@"imageURL"] isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects([authorJSONDict[@"author_id"] description], authorDict[@"author_id"]);
+    XCTAssertEqualObjects(authorJSONDict[@"born"], self.authorDicts[0][@"born"]);
+    
+    NSDictionary *bookDict = authorDict[@"books"][0];
+    NSDictionary *bookJSONDict = authorJSONDict[@"books"][0];
+    XCTAssertEqualObjects([bookJSONDict[@"book_id"] description], bookDict[@"book_id"]);
+    XCTAssertEqualObjects(bookJSONDict[@"tags"], bookDict[@"tags"]);
+}
+
+- (void)testAuthorFromJSON
+{
+    NSDictionary *authorDict = self.authorDicts[0];
+    NSURL *fileURL = [[NSBundle bundleForClass:self.class] URLForResource:@"FirstAuthor_v2" withExtension:@"json"];
+    NSString *authorJSONString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:NULL];
+    
+    NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
+    CDXAuthor *author = [CDXAuthor modelObjectWithJSONString:authorJSONString entity:authorEntity];
+    NSLog(@"%@", author);
+    XCTAssertEqualObjects(authorDict[@"author_id"], [@(author.externalID) description]);
+    XCTAssertEqualObjects(authorDict[@"lastName"], author.lastName);
+    
+    NSDictionary *bookDict = authorDict[@"books"][0];
+    CDXBook *book = author.books[0];
+    XCTAssertEqualObjects(bookDict[@"book_id"], [@(book.externalID) description]);
+    XCTAssertEqualObjects(bookDict[@"tags"], [book.tags componentsJoinedByString:@","]);
 }
 
 @end

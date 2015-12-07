@@ -10,7 +10,10 @@
 @interface CDXModelObject : NSObject
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary entity:(NSEntityDescription *)entity;
++ (instancetype)modelObjectWithJSONString:(NSString *)JSONString entity:(NSEntityDescription *)entity;
+
 @property (readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property (readonly, nonatomic) NSString *JSONRepresentation;
 
 @property (strong, readonly, nonatomic) NSEntityDescription *entity;
 @property (copy, readonly, nonatomic) NSDictionary *snapshot;

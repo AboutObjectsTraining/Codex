@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *year;
 @property (nullable, nonatomic, weak) CDXAuthor *author;
 
-@property (nullable, nonatomic, retain) NSString *tags;
+@property (nullable, nonatomic, retain) NSArray *tags;
 
 @end
 

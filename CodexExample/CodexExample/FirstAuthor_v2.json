@@ -1,0 +1,42 @@
+{
+    "firstName" : "William",
+    "lastName" : "Shakespeare",
+    "born" : "1564-04-01",
+    "author_id" : "101",
+    "imageURL" : "https:\/\/www.foo.com?id=xyz123",
+    "books" : [
+               {
+               "tags" : "drama,fantasy",
+               "title" : "The Tempest",
+               "year" : "2013",
+               "book_id" : "3001"
+               },
+               {
+               "tags" : "drama,comedy",
+               "title" : "The Taming of the Shrew",
+               "year" : "2011",
+               "book_id" : "3002"
+               },
+               {
+               "tags" : "drama,tragedy,semi-historical",
+               "title" : "Hamlet",
+               "year" : "2011",
+               "book_id" : "3003"
+               },
+               {
+               "book_id" : "3004",
+               "title" : "A Midsummer Night's Dream",
+               "year" : "2012"
+               },
+               {
+               "book_id" : "3005",
+               "title" : "As You Like It",
+               "year" : "2011"
+               },
+               {
+               "book_id" : "3006",
+               "title" : "Henry V",
+               "year" : "2011"
+               }
+               ]
+}
