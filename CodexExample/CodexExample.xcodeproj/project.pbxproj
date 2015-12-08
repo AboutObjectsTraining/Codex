@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB0AD08F1C0CAA6800A5F8A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD08E1C0CAA6800A5F8A2 /* main.m */; };
-		AB0AD0921C0CAA6800A5F8A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0911C0CAA6800A5F8A2 /* AppDelegate.m */; };
-		AB0AD0951C0CAA6800A5F8A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0941C0CAA6800A5F8A2 /* ViewController.m */; };
-		AB0AD0981C0CAA6800A5F8A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0961C0CAA6800A5F8A2 /* Main.storyboard */; };
 		AB0AD09A1C0CAA6800A5F8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD0991C0CAA6800A5F8A2 /* Assets.xcassets */; };
 		AB0AD09D1C0CAA6800A5F8A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD09B1C0CAA6800A5F8A2 /* LaunchScreen.storyboard */; };
 		AB0AD0BF1C0CAC1600A5F8A2 /* CDXAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0BC1C0CAC1600A5F8A2 /* CDXAuthor.m */; };
@@ -28,6 +25,17 @@
 		AB0AD1121C16122B00A5F8A2 /* Authors_v2.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1111C16122B00A5F8A2 /* Authors_v2.json */; };
 		AB0AD1141C1618F700A5F8A2 /* FirstAuthor_v2.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1131C1618F700A5F8A2 /* FirstAuthor_v2.json */; };
 		AB0AD1151C161A6700A5F8A2 /* FirstAuthor_v2.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1131C1618F700A5F8A2 /* FirstAuthor_v2.json */; };
+		AB0AD1201C163BF800A5F8A2 /* ELTDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD11F1C163BF800A5F8A2 /* ELTDataSource.m */; };
+		AB0AD1231C163D3700A5F8A2 /* ELTBooksController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1221C163D3700A5F8A2 /* ELTBooksController.m */; };
+		AB0AD1261C163D6F00A5F8A2 /* UIImage+ELTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1251C163D6F00A5F8A2 /* UIImage+ELTAdditions.m */; };
+		AB0AD1291C163D7D00A5F8A2 /* ELTBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1281C163D7D00A5F8A2 /* ELTBookCell.m */; };
+		AB0AD12C1C163DE700A5F8A2 /* ELTObjectStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD12B1C163DE700A5F8A2 /* ELTObjectStore.m */; };
+		AB0AD12F1C16495100A5F8A2 /* ELTBookDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD12E1C16495100A5F8A2 /* ELTBookDetailController.m */; };
+		AB0AD1321C16496E00A5F8A2 /* UIColor+ELTColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1311C16496E00A5F8A2 /* UIColor+ELTColorScheme.m */; };
+		AB0AD1341C16500E00A5F8A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1331C16500E00A5F8A2 /* Main.storyboard */; };
+		AB0AD1371C16502900A5F8A2 /* ELTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1361C16502900A5F8A2 /* ELTAppDelegate.m */; };
+		AB0AD13A1C16551400A5F8A2 /* Authors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1381C16551400A5F8A2 /* Authors.xcassets */; };
+		AB0AD13B1C16551400A5F8A2 /* Books.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0AD1391C16551400A5F8A2 /* Books.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +72,6 @@
 /* Begin PBXFileReference section */
 		AB0AD08A1C0CAA6800A5F8A2 /* CodexExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodexExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0AD08E1C0CAA6800A5F8A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AB0AD0901C0CAA6800A5F8A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AB0AD0911C0CAA6800A5F8A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AB0AD0931C0CAA6800A5F8A2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AB0AD0941C0CAA6800A5F8A2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AB0AD0971C0CAA6800A5F8A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB0AD0991C0CAA6800A5F8A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB0AD09C1C0CAA6800A5F8A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB0AD09E1C0CAA6800A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +92,25 @@
 		AB0AD1041C10CFFA00A5F8A2 /* Authors_v2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Authors_v2.plist; sourceTree = "<group>"; };
 		AB0AD1111C16122B00A5F8A2 /* Authors_v2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Authors_v2.json; sourceTree = "<group>"; };
 		AB0AD1131C1618F700A5F8A2 /* FirstAuthor_v2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FirstAuthor_v2.json; sourceTree = "<group>"; };
+		AB0AD11E1C163BF800A5F8A2 /* ELTDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTDataSource.h; sourceTree = "<group>"; };
+		AB0AD11F1C163BF800A5F8A2 /* ELTDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTDataSource.m; sourceTree = "<group>"; };
+		AB0AD1211C163D3700A5F8A2 /* ELTBooksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTBooksController.h; sourceTree = "<group>"; };
+		AB0AD1221C163D3700A5F8A2 /* ELTBooksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTBooksController.m; sourceTree = "<group>"; };
+		AB0AD1241C163D6F00A5F8A2 /* UIImage+ELTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ELTAdditions.h"; sourceTree = "<group>"; };
+		AB0AD1251C163D6F00A5F8A2 /* UIImage+ELTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ELTAdditions.m"; sourceTree = "<group>"; };
+		AB0AD1271C163D7D00A5F8A2 /* ELTBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTBookCell.h; sourceTree = "<group>"; };
+		AB0AD1281C163D7D00A5F8A2 /* ELTBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTBookCell.m; sourceTree = "<group>"; };
+		AB0AD12A1C163DE700A5F8A2 /* ELTObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTObjectStore.h; sourceTree = "<group>"; };
+		AB0AD12B1C163DE700A5F8A2 /* ELTObjectStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTObjectStore.m; sourceTree = "<group>"; };
+		AB0AD12D1C16495100A5F8A2 /* ELTBookDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTBookDetailController.h; sourceTree = "<group>"; };
+		AB0AD12E1C16495100A5F8A2 /* ELTBookDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTBookDetailController.m; sourceTree = "<group>"; };
+		AB0AD1301C16496E00A5F8A2 /* UIColor+ELTColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ELTColorScheme.h"; sourceTree = "<group>"; };
+		AB0AD1311C16496E00A5F8A2 /* UIColor+ELTColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ELTColorScheme.m"; sourceTree = "<group>"; };
+		AB0AD1331C16500E00A5F8A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AB0AD1351C16502900A5F8A2 /* ELTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTAppDelegate.h; sourceTree = "<group>"; };
+		AB0AD1361C16502900A5F8A2 /* ELTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTAppDelegate.m; sourceTree = "<group>"; };
+		AB0AD1381C16551400A5F8A2 /* Authors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Authors.xcassets; sourceTree = "<group>"; };
+		AB0AD1391C16551400A5F8A2 /* Books.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Books.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,11 +158,25 @@
 			children = (
 				AB0AD0C91C0CB84100A5F8A2 /* Codex.xcodeproj */,
 				AB0AD0BA1C0CABED00A5F8A2 /* Model */,
-				AB0AD0901C0CAA6800A5F8A2 /* AppDelegate.h */,
-				AB0AD0911C0CAA6800A5F8A2 /* AppDelegate.m */,
-				AB0AD0931C0CAA6800A5F8A2 /* ViewController.h */,
-				AB0AD0941C0CAA6800A5F8A2 /* ViewController.m */,
-				AB0AD0961C0CAA6800A5F8A2 /* Main.storyboard */,
+				AB0AD1351C16502900A5F8A2 /* ELTAppDelegate.h */,
+				AB0AD1361C16502900A5F8A2 /* ELTAppDelegate.m */,
+				AB0AD1211C163D3700A5F8A2 /* ELTBooksController.h */,
+				AB0AD1221C163D3700A5F8A2 /* ELTBooksController.m */,
+				AB0AD12D1C16495100A5F8A2 /* ELTBookDetailController.h */,
+				AB0AD12E1C16495100A5F8A2 /* ELTBookDetailController.m */,
+				AB0AD11E1C163BF800A5F8A2 /* ELTDataSource.h */,
+				AB0AD11F1C163BF800A5F8A2 /* ELTDataSource.m */,
+				AB0AD12A1C163DE700A5F8A2 /* ELTObjectStore.h */,
+				AB0AD12B1C163DE700A5F8A2 /* ELTObjectStore.m */,
+				AB0AD1271C163D7D00A5F8A2 /* ELTBookCell.h */,
+				AB0AD1281C163D7D00A5F8A2 /* ELTBookCell.m */,
+				AB0AD1241C163D6F00A5F8A2 /* UIImage+ELTAdditions.h */,
+				AB0AD1251C163D6F00A5F8A2 /* UIImage+ELTAdditions.m */,
+				AB0AD1301C16496E00A5F8A2 /* UIColor+ELTColorScheme.h */,
+				AB0AD1311C16496E00A5F8A2 /* UIColor+ELTColorScheme.m */,
+				AB0AD1331C16500E00A5F8A2 /* Main.storyboard */,
+				AB0AD1381C16551400A5F8A2 /* Authors.xcassets */,
+				AB0AD1391C16551400A5F8A2 /* Books.xcassets */,
 				AB0AD0991C0CAA6800A5F8A2 /* Assets.xcassets */,
 				AB0AD09B1C0CAA6800A5F8A2 /* LaunchScreen.storyboard */,
 				AB0AD09E1C0CAA6800A5F8A2 /* Info.plist */,
@@ -296,12 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD1141C1618F700A5F8A2 /* FirstAuthor_v2.json in Resources */,
+				AB0AD13A1C16551400A5F8A2 /* Authors.xcassets in Resources */,
 				AB0AD09D1C0CAA6800A5F8A2 /* LaunchScreen.storyboard in Resources */,
 				AB0AD1051C10CFFA00A5F8A2 /* Authors_v2.plist in Resources */,
+				AB0AD1341C16500E00A5F8A2 /* Main.storyboard in Resources */,
 				AB0AD0D91C0CE49F00A5F8A2 /* Authors.plist in Resources */,
 				AB0AD09A1C0CAA6800A5F8A2 /* Assets.xcassets in Resources */,
 				AB0AD0E71C0CF0D000A5F8A2 /* LICENSE.txt in Resources */,
-				AB0AD0981C0CAA6800A5F8A2 /* Main.storyboard in Resources */,
+				AB0AD13B1C16551400A5F8A2 /* Books.xcassets in Resources */,
 				AB0AD1121C16122B00A5F8A2 /* Authors_v2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,11 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0AD1371C16502900A5F8A2 /* ELTAppDelegate.m in Sources */,
 				AB0AD0BF1C0CAC1600A5F8A2 /* CDXAuthor.m in Sources */,
+				AB0AD1321C16496E00A5F8A2 /* UIColor+ELTColorScheme.m in Sources */,
+				AB0AD12C1C163DE700A5F8A2 /* ELTObjectStore.m in Sources */,
 				AB0AD0E31C0CEC2100A5F8A2 /* Authors.xcdatamodeld in Sources */,
+				AB0AD1291C163D7D00A5F8A2 /* ELTBookCell.m in Sources */,
 				AB0AD0C01C0CAC1600A5F8A2 /* CDXBook.m in Sources */,
-				AB0AD0951C0CAA6800A5F8A2 /* ViewController.m in Sources */,
-				AB0AD0921C0CAA6800A5F8A2 /* AppDelegate.m in Sources */,
+				AB0AD1201C163BF800A5F8A2 /* ELTDataSource.m in Sources */,
+				AB0AD12F1C16495100A5F8A2 /* ELTBookDetailController.m in Sources */,
+				AB0AD1261C163D6F00A5F8A2 /* UIImage+ELTAdditions.m in Sources */,
+				AB0AD1231C163D3700A5F8A2 /* ELTBooksController.m in Sources */,
 				AB0AD08F1C0CAA6800A5F8A2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,14 +402,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AB0AD0961C0CAA6800A5F8A2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB0AD0971C0CAA6800A5F8A2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB0AD09B1C0CAA6800A5F8A2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

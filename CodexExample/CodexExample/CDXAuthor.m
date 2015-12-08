@@ -8,6 +8,10 @@
 
 #import "CDXAuthor.h"
 
+@interface CDXAuthor ()
+@property (weak, readonly, nonatomic) NSMutableArray *mutableBooks;
+@end
+
 @implementation CDXAuthor
 
 - (NSString *)fullName
@@ -25,5 +29,19 @@
             self.lastName, self.firstName, self.books];
 }
 
+- (NSMutableArray *)mutableBooks
+{
+    return [self mutableArrayValueForKey:@"books"];
+}
+
+- (void)insertBook:(CDXBook *)book atIndex:(NSUInteger)index
+{
+    [self.mutableBooks insertObject:book atIndex:index];
+}
+
+- (void)removeBookAtIndex:(NSUInteger)index
+{
+    [self.mutableBooks removeObjectAtIndex:index];
+}
 
 @end

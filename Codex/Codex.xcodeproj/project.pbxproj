@@ -99,6 +99,7 @@
 		AB0AD0691C0CAA2900A5F8A2 /* Codex */ = {
 			isa = PBXGroup;
 			children = (
+				AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */,
 				AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */,
 				AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */,
 				AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */,
@@ -113,7 +114,6 @@
 				AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */,
 				AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */,
 				AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */,
-				AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */,
 				AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */,
 			);
 			path = Codex;

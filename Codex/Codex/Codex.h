@@ -1,21 +1,19 @@
 //
-//  Codex.h
-//  Codex
-//
-//  Created by Jonathan on 11/30/15.
-//  Copyright © 2015 About Objects. All rights reserved.
+// Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
+// See LICENSE.txt for this example's licensing information.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-//! Project version number for Codex.
 FOUNDATION_EXPORT double CodexVersionNumber;
-
-//! Project version string for Codex.
 FOUNDATION_EXPORT const unsigned char CodexVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Codex/PublicHeader.h>
-
-
 #import <Codex/CDXModelObject.h>
-#import <Codex/NSPropertyDescription+CDXAdditions.h>
+
+//#import <Codex/CDXURLTransformer.h>
+//#import <Codex/CDXDateTransformer.h>
+//#import <Codex/CDXArrayTransformer.h>
+//
+//#import <Codex/NSArray+CDXAdditions.h>
+//#import <Codex/NSValueTransformer+CDXAdditions.h>
+//#import <Codex/NSPropertyDescription+CDXAdditions.h>
