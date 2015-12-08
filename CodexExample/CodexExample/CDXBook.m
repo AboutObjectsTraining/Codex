@@ -1,21 +1,29 @@
 //
-//  CDXBook.m
-//  Codex
-//
-//  Created by Jonathan on 11/25/15.
-//  Copyright © 2015 About Objects. All rights reserved.
+// Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
+// See LICENSE.txt for this example's licensing information.
 //
 
 #import "CDXBook.h"
-//#import "CDXAuthor.h"
+
+const struct CDXBookAttributes CDXBookAttributes = {
+    .externalID = @"externalID",
+    .title = @"title",
+    .year = @"year",
+    .tags = @"tags",
+};
+
+const struct CDXBookRelationships CDXBookRelationships = {
+    .author = @"author",
+};
+
 
 @implementation CDXBook
 
-// Insert code here to add functionality to your managed object subclass
++ (NSString *)entityName { return @"Book"; }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"title: %@; year: %@", self.title, self.year];
+    return [NSString stringWithFormat:@"title: %@; year: %@, tags: %@, externalID: %@", self.title, self.year, self.tags, @(self.externalID)];
 }
 
 @end

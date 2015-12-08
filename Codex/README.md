@@ -4,16 +4,18 @@ The Codex framework provides a mechanism for encoding and decoding subclasses of
 
 ## Features
 
-* Translates between property names and external keypaths (if provided in model).
+* Allows custom bindings between model object property names and JSON or plist key paths.
+  To specify an custom binding, select an attribute or relationship in the Core Data model, and add an entry in the User Info section, setting the key to `externalKeypath`, and the value to the key path for the corresponding object in the JSON or plist data.
 * Transformation of values between property types and external types (if configured in model).
-* Transformation of property values between nil and NSNull external representation.
-* Recusively constructs graphs of nested objects during decoding, and graphs of corresponding property list serialization objects (i.e., instances of `NSDictionary`, `NSArray`, etc.) during encoding.
+  To specify a custom transformation for an attribute in the Core Data model, set it's type to Transformable, and specify the name of the subclass of `NSValueTransformer` that implements the desired transformation.
+* Automatic transformation between `nil` object property values and their `NSNull` external representation.
+* Recusively constructs graphs of nested objects during decoding, and graphs of corresponding property list serialization objects (i.e., instances of `NSDictionary`, `NSArray`, etc.) during encoding. Automatically sets back-pointers for inverse relationships.
 
 ## Limitations
 
-* Currently only supports `NSArray` collection type when modeling to-many relationships.
-* No current support for `NSManagedObject`.
-* Doesn't currently provide an `NSPersistenStore` subclass.
+* Currently only supports `NSArray` collection type for modeling to-many relationships.
+* Doesn't currently support `NSManagedObject`.
+* Doesn't currently provide an `NSPersistentStore` subclass.
 
 
 ## Usage

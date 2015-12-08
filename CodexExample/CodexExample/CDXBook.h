@@ -1,9 +1,6 @@
 //
-//  CDXBook.h
-//  Codex
-//
-//  Created by Jonathan on 11/25/15.
-//  Copyright © 2015 About Objects. All rights reserved.
+// Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
+// See LICENSE.txt for this example's licensing information.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CDXBook : CDXModelObject
 
++ (NSString *)entityName;
 @property (nonatomic, assign) NSInteger externalID;
 
 @property (nullable, nonatomic, retain) NSString *title;
@@ -25,6 +23,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSArray *tags;
 
 @end
+
+
+// Property keys
+
+extern const struct CDXBookAttributes {
+    NSString *  __unsafe_unretained externalID;
+    NSString * __unsafe_unretained title;
+    NSString * __unsafe_unretained year;
+    NSString * __unsafe_unretained tags;
+} CDXBookAttributes;
+
+
+extern const struct CDXBookRelationships {
+    NSString * __unsafe_unretained author;
+} CDXBookRelationships;
 
 NS_ASSUME_NONNULL_END
 

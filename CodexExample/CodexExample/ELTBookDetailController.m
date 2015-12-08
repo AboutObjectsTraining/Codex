@@ -2,10 +2,11 @@
 // Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
 // See LICENSE.txt for this example's licensing information.
 //
-#import "CDXAuthor.h"
-#import "CDXBook.h"
 #import "UIImage+ELTAdditions.h"
 #import "ELTBookDetailController.h"
+
+#import "CDXAuthor.h"
+#import "CDXBook.h"
 
 @interface ELTBookDetailController ()
 

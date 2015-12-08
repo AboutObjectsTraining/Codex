@@ -10,10 +10,10 @@ FOUNDATION_EXPORT const unsigned char CodexVersionString[];
 
 #import <Codex/CDXModelObject.h>
 
-//#import <Codex/CDXURLTransformer.h>
-//#import <Codex/CDXDateTransformer.h>
-//#import <Codex/CDXArrayTransformer.h>
-//
-//#import <Codex/NSArray+CDXAdditions.h>
-//#import <Codex/NSValueTransformer+CDXAdditions.h>
-//#import <Codex/NSPropertyDescription+CDXAdditions.h>
+#import <Codex/CDXURLTransformer.h>
+#import <Codex/CDXDateTransformer.h>
+#import <Codex/CDXArrayTransformer.h>
+
+#import <Codex/NSArray+CDXAdditions.h>
+#import <Codex/NSValueTransformer+CDXAdditions.h>
+#import <Codex/NSPropertyDescription+CDXAdditions.h>

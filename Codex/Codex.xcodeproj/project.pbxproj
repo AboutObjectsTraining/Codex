@@ -13,15 +13,15 @@
 		AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */; };
 		AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0B91C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B51C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.m */; };
-		AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */; };
+		AB0AD0EE1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0EC1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0EF1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0ED1C0E5FCE00A5F8A2 /* NSArray+CDXAdditions.m */; };
-		AB0AD0F31C0FAFC100A5F8A2 /* CDXURLTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F11C0FAFC100A5F8A2 /* CDXURLTransformer.h */; };
+		AB0AD0F31C0FAFC100A5F8A2 /* CDXURLTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F11C0FAFC100A5F8A2 /* CDXURLTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0F41C0FAFC100A5F8A2 /* CDXURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0F21C0FAFC100A5F8A2 /* CDXURLTransformer.m */; };
-		AB0AD0FB1C0FBC3000A5F8A2 /* CDXArrayTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */; };
+		AB0AD0FB1C0FBC3000A5F8A2 /* CDXArrayTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0F91C0FBC3000A5F8A2 /* CDXArrayTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0FC1C0FBC3000A5F8A2 /* CDXArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0FA1C0FBC3000A5F8A2 /* CDXArrayTransformer.m */; };
-		AB0AD1021C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD1001C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h */; };
+		AB0AD1021C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD1001C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD1031C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1011C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.m */; };
-		AB0AD10D1C10DCA000A5F8A2 /* CDXDateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD10B1C10DCA000A5F8A2 /* CDXDateTransformer.h */; };
+		AB0AD10D1C10DCA000A5F8A2 /* CDXDateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD10B1C10DCA000A5F8A2 /* CDXDateTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD10E1C10DCA000A5F8A2 /* CDXDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */; };
 /* End PBXBuildFile section */
 
@@ -140,8 +140,8 @@
 				AB0AD1021C10C9B600A5F8A2 /* NSValueTransformer+CDXAdditions.h in Headers */,
 				AB0AD0F31C0FAFC100A5F8A2 /* CDXURLTransformer.h in Headers */,
 				AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */,
-				AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */,
 				AB0AD0FB1C0FBC3000A5F8A2 /* CDXArrayTransformer.h in Headers */,
+				AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

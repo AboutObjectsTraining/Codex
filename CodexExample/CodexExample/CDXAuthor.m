@@ -1,18 +1,33 @@
 //
-//  CDXAuthor.m
-//  Codex
-//
-//  Created by Jonathan on 11/25/15.
-//  Copyright © 2015 About Objects. All rights reserved.
+// Copyright (C) 2015 About Objects, Inc. All Rights Reserved.
+// See LICENSE.txt for this example's licensing information.
 //
 
 #import "CDXAuthor.h"
+
+// Property keys
+
+const struct CDXAuthorAttributes CDXAuthorAttributes = {
+    .externalID = @"externalID",
+    .firstName = @"firstName",
+    .lastName = @"lastName",
+    .dateOfBirth = @"dateOfBirth",
+    .imageURL = @"imageURL",
+};
+
+const struct CDXAuthorRelationships CDXAuthorRelationships = {
+    .books = @"books",
+};
+
+
 
 @interface CDXAuthor ()
 @property (weak, readonly, nonatomic) NSMutableArray *mutableBooks;
 @end
 
 @implementation CDXAuthor
+
++ (NSString *)entityName { return @"Author"; }
 
 - (NSString *)fullName
 {
@@ -25,13 +40,19 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:
-            @"lastName: %@, firstName: %@\nbooks:\n%@",
-            self.lastName, self.firstName, self.books];
+            @"fullName: %@, dateOfBirth: %@\n"
+            @"externalID: %@\n"
+            @"imageURL: %@\n"
+            @"books:\n%@",
+            self.fullName, self.dateOfBirth,
+            @(self.externalID),
+            self.imageURL,
+            self.books];
 }
 
 - (NSMutableArray *)mutableBooks
 {
-    return [self mutableArrayValueForKey:@"books"];
+    return [self mutableArrayValueForKey:CDXAuthorRelationships.books];
 }
 
 - (void)insertBook:(CDXBook *)book atIndex:(NSUInteger)index

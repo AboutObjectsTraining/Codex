@@ -3,6 +3,7 @@
 // See LICENSE.txt for this example's licensing information.
 //
 #import <UIKit/UIKit.h>
+#import <Codex/Codex.h>
 #import "ELTObjectStore.h"
 #import "CDXAuthor.h"
 #import "CDXBook.h"
@@ -57,7 +58,7 @@ NSString *ELTDocumentPathForFileName(NSString *fileName)
 - (NSEntityDescription *)entity
 {
     if (!_entity) {
-        _entity = self.model.entitiesByName[@"Author"];
+        _entity = self.model.entitiesByName[[CDXAuthor entityName]];
     }
     return _entity;
 }
@@ -87,12 +88,7 @@ NSString *ELTDocumentPathForFileName(NSString *fileName)
 
 - (NSArray *)valuesByEncodingAuthors
 {
-    NSMutableArray *dicts = [NSMutableArray arrayWithCapacity:self.authors.count];
-    for (CDXAuthor *author in self.authors) {
-        [dicts addObject:author.dictionaryRepresentation];
-    }
-    
-    return dicts;
+    return [self.authors cdx_dictionaryRepresentation];
 }
 
 - (void)invalidateCache
