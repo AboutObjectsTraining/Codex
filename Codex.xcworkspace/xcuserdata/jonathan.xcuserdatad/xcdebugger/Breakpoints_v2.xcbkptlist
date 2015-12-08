@@ -13,5 +13,99 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodexExample/CodexExampleTests/ExampleModelTests.m"
+            timestampString = "470865669.626788"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-setUp"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ExampleModelTests setUp]"
+                  moduleName = "CodexExampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Developer/ao-courseware/CodexWorkspace/CodexExample/CodexExampleTests/ExampleModelTests.m"
+                  timestampString = "470865952.38848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "454">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ExampleModelTests setUp]"
+                  moduleName = "CodexExampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Developer/ao-courseware/CodexWorkspace/CodexExample/CodexExampleTests/ExampleModelTests.m"
+                  timestampString = "470865952.38883"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "897">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ExampleModelTests setUp]"
+                  moduleName = "CodexExampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Developer/ao-courseware/CodexWorkspace/CodexExample/CodexExampleTests/ExampleModelTests.m"
+                  timestampString = "470865952.38905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1612">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ExampleModelTests setUp]"
+                  moduleName = "CodexExampleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Developer/ao-courseware/CodexWorkspace/CodexExample/CodexExampleTests/ExampleModelTests.m"
+                  timestampString = "470865952.389297"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1734">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Codex/Codex/CDXModelObject.m"
+            timestampString = "471210526.032971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-attributeValues"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
