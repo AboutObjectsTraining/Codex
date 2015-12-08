@@ -5,8 +5,8 @@
 #import "UIImage+ELTAdditions.h"
 #import "ELTBookDetailController.h"
 
-#import "CDXAuthor.h"
-#import "CDXBook.h"
+#import "ELTAuthor.h"
+#import "ELTBook.h"
 
 @interface ELTBookDetailController ()
 

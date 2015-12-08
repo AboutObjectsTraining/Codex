@@ -3,8 +3,8 @@
 //
 #import <Foundation/Foundation.h>
 
-@class CDXBook;
-@class CDXAuthor;
+@class ELTBook;
+@class ELTAuthor;
 
 extern NSString *ELTDocumentPathForFileName(NSString *fileName);
 
@@ -24,9 +24,9 @@ extern NSString *ELTDocumentPathForFileName(NSString *fileName);
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 
-- (CDXBook *)bookAtIndexPath:(NSIndexPath *)indexPath;
+- (ELTBook *)bookAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void)insertBook:(CDXBook *)book atIndexPath:(NSIndexPath *)indexPath;
-- (void)removeBook:(CDXBook *)book atIndexPath:(NSIndexPath *)indexPath;
+- (void)insertBook:(ELTBook *)book atIndexPath:(NSIndexPath *)indexPath;
+- (void)removeBook:(ELTBook *)book atIndexPath:(NSIndexPath *)indexPath;
 
 @end

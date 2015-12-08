@@ -4,13 +4,13 @@
 //
 #import <UIKit/UIKit.h>
 
-@class CDXBook;
-@class CDXAuthor;
+@class ELTBook;
+@class ELTAuthor;
 
 @interface UIImage (ELTAdditions)
 
-+ (UIImage *)elt_imageForBook:(CDXBook *)book;
-+ (UIImage *)elt_imageForAuthor:(CDXAuthor *)author;
++ (UIImage *)elt_imageForBook:(ELTBook *)book;
++ (UIImage *)elt_imageForAuthor:(ELTAuthor *)author;
 
 + (UIImage *)elt_imageNamed:(NSString *)imageName alternateImageName:(NSString *)alternateImageName;
 

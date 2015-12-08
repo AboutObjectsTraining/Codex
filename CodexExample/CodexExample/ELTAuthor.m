@@ -3,11 +3,11 @@
 // See LICENSE.txt for this example's licensing information.
 //
 
-#import "CDXAuthor.h"
+#import "ELTAuthor.h"
 
 // Property keys
 
-const struct CDXAuthorAttributes CDXAuthorAttributes = {
+const struct ELTAuthorAttributes ELTAuthorAttributes = {
     .externalID = @"externalID",
     .firstName = @"firstName",
     .lastName = @"lastName",
@@ -15,17 +15,17 @@ const struct CDXAuthorAttributes CDXAuthorAttributes = {
     .imageURL = @"imageURL",
 };
 
-const struct CDXAuthorRelationships CDXAuthorRelationships = {
+const struct ELTAuthorRelationships ELTAuthorRelationships = {
     .books = @"books",
 };
 
 
 
-@interface CDXAuthor ()
+@interface ELTAuthor ()
 @property (weak, readonly, nonatomic) NSMutableArray *mutableBooks;
 @end
 
-@implementation CDXAuthor
+@implementation ELTAuthor
 
 + (NSString *)entityName { return @"Author"; }
 
@@ -52,10 +52,10 @@ const struct CDXAuthorRelationships CDXAuthorRelationships = {
 
 - (NSMutableArray *)mutableBooks
 {
-    return [self mutableArrayValueForKey:CDXAuthorRelationships.books];
+    return [self mutableArrayValueForKey:ELTAuthorRelationships.books];
 }
 
-- (void)insertBook:(CDXBook *)book atIndex:(NSUInteger)index
+- (void)insertBook:(ELTBook *)book atIndex:(NSUInteger)index
 {
     [self.mutableBooks insertObject:book atIndex:index];
 }

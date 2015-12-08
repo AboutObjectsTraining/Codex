@@ -5,8 +5,8 @@
 #import <UIKit/UIKit.h>
 #import <Codex/Codex.h>
 #import "ELTObjectStore.h"
-#import "CDXAuthor.h"
-#import "CDXBook.h"
+#import "ELTAuthor.h"
+#import "ELTBook.h"
 
 NSString * const ELTModelName = @"Authors";
 NSString * const ELTFileName = @"Authors_v2";
@@ -58,7 +58,7 @@ NSString *ELTDocumentPathForFileName(NSString *fileName)
 - (NSEntityDescription *)entity
 {
     if (!_entity) {
-        _entity = self.model.entitiesByName[[CDXAuthor entityName]];
+        _entity = self.model.entitiesByName[[ELTAuthor entityName]];
     }
     return _entity;
 }
@@ -80,7 +80,7 @@ NSString *ELTDocumentPathForFileName(NSString *fileName)
 {
     NSMutableArray *authors = [NSMutableArray arrayWithCapacity:self.encodedValues.count];
     for (NSDictionary *dict in self.encodedValues) {
-        [authors addObject:[CDXAuthor modelObjectWithDictionary:dict entity:self.entity]];
+        [authors addObject:[ELTAuthor modelObjectWithDictionary:dict entity:self.entity]];
     }
     
     self.authors = authors;
@@ -98,7 +98,7 @@ NSString *ELTDocumentPathForFileName(NSString *fileName)
 
 - (NSString *)titleForSection:(NSInteger)section
 {
-    CDXAuthor *author = self.authors[section];
+    ELTAuthor *author = self.authors[section];
     return author.fullName;
 }
 
@@ -109,25 +109,25 @@ NSString *ELTDocumentPathForFileName(NSString *fileName)
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section
 {
-    CDXAuthor *author = self.authors[section];
+    ELTAuthor *author = self.authors[section];
     return author.books.count;
 }
 
-- (CDXBook *)bookAtIndexPath:(NSIndexPath *)indexPath
+- (ELTBook *)bookAtIndexPath:(NSIndexPath *)indexPath
 {
-    CDXAuthor *author = self.authors[indexPath.section];
+    ELTAuthor *author = self.authors[indexPath.section];
     return author.books[indexPath.row];
 }
 
-- (void)removeBook:(CDXBook *)book atIndexPath:(NSIndexPath *)indexPath
+- (void)removeBook:(ELTBook *)book atIndexPath:(NSIndexPath *)indexPath
 {
-    CDXAuthor *author = self.authors[indexPath.section];
+    ELTAuthor *author = self.authors[indexPath.section];
     [author removeBookAtIndex:indexPath.row];
 }
 
-- (void)insertBook:(CDXBook *)book atIndexPath:(NSIndexPath *)indexPath
+- (void)insertBook:(ELTBook *)book atIndexPath:(NSIndexPath *)indexPath
 {
-    CDXAuthor *author = self.authors[indexPath.section];
+    ELTAuthor *author = self.authors[indexPath.section];
     [author insertBook:book atIndex:indexPath.row];
 }
 

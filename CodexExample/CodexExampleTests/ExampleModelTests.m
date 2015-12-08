@@ -9,8 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <Codex/Codex.h>
 
-#import "CDXBook.h"
-#import "CDXAuthor.h"
+#import "ELTBook.h"
+#import "ELTAuthor.h"
 
 @interface ExampleModelTests : XCTestCase
 @property (strong, nonatomic) NSManagedObjectModel *model;
@@ -65,7 +65,7 @@
     NSDictionary *authorDict = self.authorDicts[0];
     NSDictionary *bookDict = authorDict[@"books"][0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Book"];
-    CDXBook *book = [CDXBook modelObjectWithDictionary:bookDict entity:authorEntity];
+    ELTBook *book = [ELTBook modelObjectWithDictionary:bookDict entity:authorEntity];
     NSLog(@"%@", book);
     XCTAssertEqualObjects(book.title, bookDict[@"title"]);
 }
@@ -74,7 +74,7 @@
 {
     NSDictionary *authorDict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
+    ELTAuthor *author = [ELTAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
     NSLog(@"%@", author);
     XCTAssertEqualObjects(author.lastName, authorDict[@"lastName"]);
     
@@ -87,7 +87,7 @@
 {
     NSDictionary *dict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:dict entity:authorEntity];
+    ELTAuthor *author = [ELTAuthor modelObjectWithDictionary:dict entity:authorEntity];
     NSLog(@"%@", author);
 
     XCTAssertTrue([author.imageURL isKindOfClass:[NSURL class]]);
@@ -109,7 +109,7 @@
 {
     NSDictionary *authorDict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
+    ELTAuthor *author = [ELTAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
     NSLog(@"%@", author);
     
     NSDictionary *dict = author.dictionaryRepresentation;
@@ -125,7 +125,7 @@
 {
     NSDictionary *authorDict = self.authorDicts[0];
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
+    ELTAuthor *author = [ELTAuthor modelObjectWithDictionary:authorDict entity:authorEntity];
     NSLog(@"%@", author);
     
     XCTAssertTrue([author.imageURL isKindOfClass:[NSURL class]]);
@@ -155,13 +155,13 @@
     NSString *authorJSONString = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:NULL];
     
     NSEntityDescription *authorEntity = self.model.entitiesByName[@"Author"];
-    CDXAuthor *author = [CDXAuthor modelObjectWithJSONString:authorJSONString entity:authorEntity];
+    ELTAuthor *author = [ELTAuthor modelObjectWithJSONString:authorJSONString entity:authorEntity];
     NSLog(@"%@", author);
     XCTAssertEqualObjects(authorDict[@"author_id"], [@(author.externalID) description]);
     XCTAssertEqualObjects(authorDict[@"lastName"], author.lastName);
     
     NSDictionary *bookDict = authorDict[@"books"][0];
-    CDXBook *book = author.books[0];
+    ELTBook *book = author.books[0];
     XCTAssertEqualObjects(bookDict[@"book_id"], [@(book.externalID) description]);
     XCTAssertEqualObjects(bookDict[@"tags"], [book.tags componentsJoinedByString:@","]);
 }

@@ -15,7 +15,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ELTBookDetailController *controller = segue.destinationViewController;
-    CDXBook *book = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+    ELTBook *book = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
     controller.book = book;
 }
 

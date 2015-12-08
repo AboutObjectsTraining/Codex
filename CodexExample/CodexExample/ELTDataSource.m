@@ -3,8 +3,8 @@
 #import "ELTDataSource.h"
 #import "ELTBookCell.h"
 
-#import "CDXBook.h"
-#import "CDXAuthor.h"
+#import "ELTBook.h"
+#import "ELTAuthor.h"
 
 @interface ELTDataSource ()
 @property (strong, nonatomic) IBOutlet ELTObjectStore *objectStore;
@@ -48,7 +48,7 @@
 
 - (void)populateCell:(ELTBookCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    CDXBook *book = [self.objectStore bookAtIndexPath:indexPath];
+    ELTBook *book = [self.objectStore bookAtIndexPath:indexPath];
     
     cell.titleLabel.text = book.title;
     cell.infoLabel.text = [NSString stringWithFormat:@"%@ %@", book.year, book.author.fullName];

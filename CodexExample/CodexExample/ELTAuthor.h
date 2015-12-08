@@ -7,11 +7,11 @@
 #import <CoreData/CoreData.h>
 #import <Codex/Codex.h>
 
-@class CDXBook;
+@class ELTBook;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CDXAuthor : CDXModelObject
+@interface ELTAuthor : CDXModelObject
 
 + (NSString *)entityName;
 @property (nonatomic, assign) NSInteger externalID;
@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *lastName;
 @property (nullable, nonatomic, readonly) NSString *fullName;
 
-@property (nullable, nonatomic, retain) NSArray<CDXBook *> *books;
-- (void)insertBook:(CDXBook *)book atIndex:(NSUInteger)index;
+@property (nullable, nonatomic, retain) NSArray<ELTBook *> *books;
+- (void)insertBook:(ELTBook *)book atIndex:(NSUInteger)index;
 - (void)removeBookAtIndex:(NSUInteger)index;
 
 @property (nullable, nonatomic, retain) NSDate *dateOfBirth;
@@ -32,18 +32,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Property keys
 
-extern const struct CDXAuthorAttributes {
+extern const struct ELTAuthorAttributes {
     NSString *  __unsafe_unretained externalID;
     NSString * __unsafe_unretained firstName;
     NSString * __unsafe_unretained lastName;
     NSString * __unsafe_unretained dateOfBirth;
     NSString * __unsafe_unretained imageURL;
-} CDXAuthorAttributes;
+} ELTAuthorAttributes;
 
 
-extern const struct CDXAuthorRelationships {
+extern const struct ELTAuthorRelationships {
     NSString * __unsafe_unretained books;
-} CDXAuthorRelationships;
+} ELTAuthorRelationships;
 
 
 NS_ASSUME_NONNULL_END

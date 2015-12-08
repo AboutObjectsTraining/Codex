@@ -3,21 +3,21 @@
 // See LICENSE.txt for this example's licensing information.
 //
 
-#import "CDXBook.h"
+#import "ELTBook.h"
 
-const struct CDXBookAttributes CDXBookAttributes = {
+const struct ELTBookAttributes ELTBookAttributes = {
     .externalID = @"externalID",
     .title = @"title",
     .year = @"year",
     .tags = @"tags",
 };
 
-const struct CDXBookRelationships CDXBookRelationships = {
+const struct ELTBookRelationships ELTBookRelationships = {
     .author = @"author",
 };
 
 
-@implementation CDXBook
+@implementation ELTBook
 
 + (NSString *)entityName { return @"Book"; }
 

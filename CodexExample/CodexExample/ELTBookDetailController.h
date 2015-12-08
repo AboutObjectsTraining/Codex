@@ -4,10 +4,10 @@
 //
 #import <UIKit/UIKit.h>
 
-@class CDXBook;
+@class ELTBook;
 
 @interface ELTBookDetailController : UITableViewController
 
-@property (strong, nonatomic) CDXBook *book;
+@property (strong, nonatomic) ELTBook *book;
 
 @end
