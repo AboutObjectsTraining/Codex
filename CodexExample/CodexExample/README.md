@@ -1,4 +1,4 @@
-# Codex Example App --- English Literature
+# Codex Example --- English Literature App
 
 Objective-C app that demonstrates use of the Codex framework for data marshaling.
 
