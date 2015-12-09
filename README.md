@@ -6,8 +6,14 @@ Version 1.0 *(requires Xcode 7)*
 ## Overview
 A framework and example app that demonstrates the following:
 
-* Leveraging a Core Data model to configure metadata for marshaling data from web services
-* Working with Key-Value Coding (KVC) to support encoding and decoding of objects in JSON and/or plist format
+* Using Key-Value Coding (KVC) and value transformers (subclasses of `NSValueTransformer`) to support encoding and decoding of model objects from data stored in JSON and/or plist format
+* Leveraging a Core Data model to configure metadata needed during data marshaling to specify such things as:
+  - Attribute names and types
+  - Relationship names and types
+  - Inverse relationships
+  - External key paths
+  - Value transformers
+
 
 ## Screenshots
 
@@ -23,15 +29,15 @@ Coming soon.
 
 ## Projects
 
-The Codex workspace houses the following projects:
+The Codex workspace includes the following projects:
 
-### [Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex)
+[Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex)
 
-Objective-C classes that model a reading list containing a list of books and authors, as well as an object store controller that serializes and deserializes object graphs stored in JSON or plist format.
+The Codes framework provides a mechanism for encoding and decoding subclasses of `CDXModelObject`, based on mappings defined in a Core Data model.
 
-### [CodexExample](https://github.com/AboutObjectsTraining/Codex/tree/master/CodexExample)
+[CodexExample](https://github.com/AboutObjectsTraining/Codex/tree/master/CodexExample)
 
-Subclasses and categories on Foundation, UIKit, Core Data, and Codex classes. Storyboard-based. Depends on the *Codex* project.
+An Objective-C app that demonstrates use of the Codex framework for data marshaling. Storyboard-based. Depends on the [Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex) project.
  
 ---
 
