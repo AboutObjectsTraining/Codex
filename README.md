@@ -25,11 +25,11 @@ Coming soon.
 
 The Codex workspace houses the following projects:
 
-* **[Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex)**
+### [Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex)**
 
- Objective-C classes that model a reading list containing a list of books and authors, as well as an object store controller that serializes and deserializes object graphs stored in JSON or plist format.
+Objective-C classes that model a reading list containing a list of books and authors, as well as an object store controller that serializes and deserializes object graphs stored in JSON or plist format.
 
-* **[CodexExample](https://github.com/AboutObjectsTraining/Codex/tree/master/CodexExample)**
+### [CodexExample](https://github.com/AboutObjectsTraining/Codex/tree/master/CodexExample)**
 
 Subclasses and categories on Foundation, UIKit, Core Data, and Codex classes. Storyboard-based. Depends on the *Codex* project.
  
