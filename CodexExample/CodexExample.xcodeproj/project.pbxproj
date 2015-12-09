@@ -53,13 +53,6 @@
 			remoteGlobalIDString = AB0AD0671C0CAA2900A5F8A2;
 			remoteInfo = Codex;
 		};
-		AB0AD0D01C0CB84100A5F8A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB0AD0C91C0CB84100A5F8A2 /* Codex.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AB0AD0711C0CAA2900A5F8A2;
-			remoteInfo = CodexTests;
-		};
 		AB0AD0D51C0CE2C500A5F8A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AB0AD0C91C0CB84100A5F8A2 /* Codex.xcodeproj */;
@@ -87,7 +80,7 @@
 		AB0AD0D71C0CE49F00A5F8A2 /* Authors.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Authors.plist; sourceTree = "<group>"; };
 		AB0AD0E21C0CEC2100A5F8A2 /* Authors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Authors.xcdatamodel; sourceTree = "<group>"; };
 		AB0AD0E51C0CF0D000A5F8A2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		AB0AD0E61C0CF0D000A5F8A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AB0AD0E61C0CF0D000A5F8A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AB0AD0FD1C0FBE1700A5F8A2 /* Authors 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Authors 2.xcdatamodel"; sourceTree = "<group>"; };
 		AB0AD1041C10CFFA00A5F8A2 /* Authors_v2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Authors_v2.plist; sourceTree = "<group>"; };
 		AB0AD1111C16122B00A5F8A2 /* Authors_v2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Authors_v2.json; sourceTree = "<group>"; };
@@ -111,7 +104,7 @@
 		AB0AD1361C16502900A5F8A2 /* ELTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTAppDelegate.m; sourceTree = "<group>"; };
 		AB0AD1381C16551400A5F8A2 /* Authors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Authors.xcassets; sourceTree = "<group>"; };
 		AB0AD1391C16551400A5F8A2 /* Books.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Books.xcassets; sourceTree = "<group>"; };
-		AB0AD13C1C17730D00A5F8A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AB0AD13C1C17730D00A5F8A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				AB0AD0CF1C0CB84100A5F8A2 /* Codex.framework */,
-				AB0AD0D11C0CB84100A5F8A2 /* CodexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,13 +309,6 @@
 			fileType = wrapper.framework;
 			path = Codex.framework;
 			remoteRef = AB0AD0CE1C0CB84100A5F8A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AB0AD0D11C0CB84100A5F8A2 /* CodexTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CodexTests.xctest;
-			remoteRef = AB0AD0D01C0CB84100A5F8A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
