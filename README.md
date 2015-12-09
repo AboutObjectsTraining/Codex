@@ -37,7 +37,7 @@ The Codex framework provides a mechanism for encoding and decoding subclasses of
 
 [CodexExample](https://github.com/AboutObjectsTraining/Codex/tree/master/CodexExample)
 
-An Objective-C app that demonstrates use of the Codex framework for data marshaling. Storyboard-based. Depends on the [Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex) project.
+An Objective-C app that demonstrates use of the Codex framework for data marshaling. Storyboard-based. Depends on the [Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex) framework.
  
 ---
 
