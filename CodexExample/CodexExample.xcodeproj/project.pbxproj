@@ -111,6 +111,7 @@
 		AB0AD1361C16502900A5F8A2 /* ELTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTAppDelegate.m; sourceTree = "<group>"; };
 		AB0AD1381C16551400A5F8A2 /* Authors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Authors.xcassets; sourceTree = "<group>"; };
 		AB0AD1391C16551400A5F8A2 /* Books.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Books.xcassets; sourceTree = "<group>"; };
+		AB0AD13C1C17730D00A5F8A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0AD0C91C0CB84100A5F8A2 /* Codex.xcodeproj */,
+				AB0AD13C1C17730D00A5F8A2 /* README.md */,
 				AB0AD0BA1C0CABED00A5F8A2 /* Model */,
 				AB0AD1351C16502900A5F8A2 /* ELTAppDelegate.h */,
 				AB0AD1361C16502900A5F8A2 /* ELTAppDelegate.m */,

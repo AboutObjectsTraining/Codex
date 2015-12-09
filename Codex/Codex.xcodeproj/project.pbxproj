@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB0AD06B1C0CAA2900A5F8A2 /* Codex.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB0AD0721C0CAA2900A5F8A2 /* Codex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */; };
 		AB0AD0B61C0CAAC900A5F8A2 /* CDXModelObject.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB0AD0B71C0CAAC900A5F8A2 /* CDXModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */; };
 		AB0AD0B81C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,22 +24,10 @@
 		AB0AD10E1C10DCA000A5F8A2 /* CDXDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD10C1C10DCA000A5F8A2 /* CDXDateTransformer.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AB0AD0731C0CAA2900A5F8A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB0AD05E1C0CAA2900A5F8A2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB0AD0661C0CAA2900A5F8A2;
-			remoteInfo = Codex;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0AD06A1C0CAA2900A5F8A2 /* Codex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codex.h; sourceTree = "<group>"; };
 		AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0AD0781C0CAA2900A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0AD0B21C0CAAC900A5F8A2 /* CDXModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDXModelObject.h; sourceTree = "<group>"; };
 		AB0AD0B31C0CAAC900A5F8A2 /* CDXModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDXModelObject.m; sourceTree = "<group>"; };
 		AB0AD0B41C0CAAC900A5F8A2 /* NSPropertyDescription+CDXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+CDXAdditions.h"; sourceTree = "<group>"; };
@@ -66,14 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB0AD06E1C0CAA2900A5F8A2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB0AD0721C0CAA2900A5F8A2 /* Codex.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +61,6 @@
 			children = (
 				AB0AD10F1C12097400A5F8A2 /* README.md */,
 				AB0AD0691C0CAA2900A5F8A2 /* Codex */,
-				AB0AD0751C0CAA2900A5F8A2 /* CodexTests */,
 				AB0AD0681C0CAA2900A5F8A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */,
-				AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,14 +94,6 @@
 				AB0AD06C1C0CAA2900A5F8A2 /* Info.plist */,
 			);
 			path = Codex;
-			sourceTree = "<group>";
-		};
-		AB0AD0751C0CAA2900A5F8A2 /* CodexTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB0AD0781C0CAA2900A5F8A2 /* Info.plist */,
-			);
-			path = CodexTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,24 +135,6 @@
 			productReference = AB0AD0671C0CAA2900A5F8A2 /* Codex.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AB0AD0701C0CAA2900A5F8A2 /* CodexTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB0AD07E1C0CAA2900A5F8A2 /* Build configuration list for PBXNativeTarget "CodexTests" */;
-			buildPhases = (
-				AB0AD06D1C0CAA2900A5F8A2 /* Sources */,
-				AB0AD06E1C0CAA2900A5F8A2 /* Frameworks */,
-				AB0AD06F1C0CAA2900A5F8A2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB0AD0741C0CAA2900A5F8A2 /* PBXTargetDependency */,
-			);
-			name = CodexTests;
-			productName = CodexTests;
-			productReference = AB0AD0711C0CAA2900A5F8A2 /* CodexTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,9 +145,6 @@
 				ORGANIZATIONNAME = "About Objects";
 				TargetAttributes = {
 					AB0AD0661C0CAA2900A5F8A2 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					AB0AD0701C0CAA2900A5F8A2 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
@@ -214,20 +162,12 @@
 			projectRoot = "";
 			targets = (
 				AB0AD0661C0CAA2900A5F8A2 /* Codex */,
-				AB0AD0701C0CAA2900A5F8A2 /* CodexTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AB0AD0651C0CAA2900A5F8A2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB0AD06F1C0CAA2900A5F8A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,22 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB0AD06D1C0CAA2900A5F8A2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB0AD0741C0CAA2900A5F8A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB0AD0661C0CAA2900A5F8A2 /* Codex */;
-			targetProxy = AB0AD0731C0CAA2900A5F8A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AB0AD0791C0CAA2900A5F8A2 /* Debug */ = {
@@ -390,26 +315,6 @@
 			};
 			name = Release;
 		};
-		AB0AD07F1C0CAA2900A5F8A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CodexTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aboutobjects.CodexTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		AB0AD0801C0CAA2900A5F8A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CodexTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aboutobjects.CodexTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -427,15 +332,6 @@
 			buildConfigurations = (
 				AB0AD07C1C0CAA2900A5F8A2 /* Debug */,
 				AB0AD07D1C0CAA2900A5F8A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB0AD07E1C0CAA2900A5F8A2 /* Build configuration list for PBXNativeTarget "CodexTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB0AD07F1C0CAA2900A5F8A2 /* Debug */,
-				AB0AD0801C0CAA2900A5F8A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
