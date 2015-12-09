@@ -33,7 +33,7 @@ The Codex workspace includes the following projects:
 
 [Codex](https://github.com/AboutObjectsTraining/Codex/tree/master/Codex)
 
-The Codes framework provides a mechanism for encoding and decoding subclasses of `CDXModelObject`, based on mappings defined in a Core Data model.
+The Codex framework provides a mechanism for encoding and decoding subclasses of `CDXModelObject`, based on mappings defined in a Core Data model.
 
 [CodexExample](https://github.com/AboutObjectsTraining/Codex/tree/master/CodexExample)
 
