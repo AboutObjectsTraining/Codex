@@ -74,7 +74,7 @@
     
     for (NSAttributeDescription *attribute in attributes.allValues) {
         NSValueTransformer *transformer = [NSValueTransformer cdx_valueTransformerForAttribute:attribute];
-        id value = [outboundVals valueForKeyPath:attribute.name];
+        id value = outboundVals[attribute.name];
         value = transformer == nil ? value : [transformer transformedValue:value];
         
         // TODO: Construct intervening objects if they don't exist yet.
@@ -104,17 +104,17 @@
     return relationshipVals;
 }
 
-- (void)setValue:(id)value forKey:(NSString *)key
-{
-    value = (value == [NSNull null] ? nil : value);
-    
-    [super setValue:value forKey:key];
-}
-
 @end
 
 
 @implementation CDXModelObject (Decoding)
+
+
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+    id val = (value == [NSNull null] ? nil : value);
+    [super setValue:val forKey:key];
+}
 
 - (void)setAttributeValuesForKeysWithDictionary:(NSDictionary *)dictionary
 {
@@ -146,7 +146,7 @@
         // If there's no value corresponding to the external keypath, assume the
         // the relationship represents a back-pointer, in which case do nothing.
         if (value == nil) {
-            return;
+            continue;
         }
         
         if (relationship.isToMany) {
