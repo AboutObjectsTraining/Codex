@@ -31,10 +31,10 @@ const struct ELTAuthorRelationships ELTAuthorRelationships = {
 
 - (NSString *)fullName
 {
-    return (self.firstName && self.lastName ?
-            [NSString stringWithFormat:@"%@, %@", self.lastName, self.firstName] :
-            self.firstName ? self.firstName :
-            self.lastName ? self.lastName : nil);
+    return (self.lastName == nil && self.firstName == nil ? nil :
+            self.firstName == nil ? self.lastName :
+            self.lastName == nil ? self.firstName :
+            [NSString stringWithFormat:@"%@, %@", self.lastName, self.firstName]);
 }
 
 - (NSString *)description

@@ -171,10 +171,24 @@ extension ModelObject
     }
     
     
+    public func modelObject(withDictionary dictionary: [String: AnyObject], relationship: NSRelationshipDescription) -> ModelObject
+    {
+        guard
+            let targetEntity = relationship.destinationEntity,
+            let className = targetEntity.managedObjectClassName,
+            let TargetClass: ModelObject.Type = NSClassFromString(className) as? ModelObject.Type
+            else {
+                print("Unable to resolve target class for \(relationship.destinationEntity)")
+                abort()
+        }
+        
+        return TargetClass.init(dictionary: dictionary, entity: targetEntity)
+    }
+    
     public func setBothSidesOfRelationship(relationship: NSRelationshipDescription, withValuesFromDictionaries dictionaries: [[String: AnyObject]])
     {
         let modelObjects = dictionaries.map { (dict) -> ModelObject in
-            let modelObj = self.dynamicType.init(dictionary: dict, entity: self.entity)
+            let modelObj = modelObject(withDictionary: dict, relationship: relationship)
             if let key = relationship.inverseRelationship?.name {
                 modelObj.setValue(self, forKey: key)
             }
@@ -189,7 +203,7 @@ extension ModelObject
             return
         }
         
-        let modelObj = self.dynamicType.init(dictionary: dict, entity: entity)
+        let modelObj = modelObject(withDictionary: dict, relationship: relationship)
         if let key = relationship.inverseRelationship?.name {
             modelObj.setValue(self, forKey: key)
         }

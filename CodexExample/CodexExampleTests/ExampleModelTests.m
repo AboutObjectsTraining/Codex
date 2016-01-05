@@ -64,8 +64,8 @@
 {
     NSDictionary *authorDict = self.authorDicts[0];
     NSDictionary *bookDict = authorDict[@"books"][0];
-    NSEntityDescription *authorEntity = self.model.entitiesByName[@"Book"];
-    ELTBook *book = [ELTBook modelObjectWithDictionary:bookDict entity:authorEntity];
+    NSEntityDescription *bookEntity = self.model.entitiesByName[@"Book"];
+    ELTBook *book = [ELTBook modelObjectWithDictionary:bookDict entity:bookEntity];
     NSLog(@"%@", book);
     XCTAssertEqualObjects(book.title, bookDict[@"title"]);
 }

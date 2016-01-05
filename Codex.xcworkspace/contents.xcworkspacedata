@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftCodexExample/SwiftCodexExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CodexExample/CodexExample.xcodeproj">
    </FileRef>
    <FileRef
