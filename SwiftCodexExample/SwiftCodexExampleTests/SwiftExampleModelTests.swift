@@ -32,6 +32,8 @@ class SwiftExampleModelTests: XCTestCase
         super.tearDown()
     }
     
+    
+    
     func testEntityDescriptions()
     {
         for entity in model.entities {

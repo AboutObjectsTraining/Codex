@@ -9,6 +9,8 @@ import SwiftCodex
 @objc (Book)
 public class Book: ModelObject
 {
+    public static let entityName = "Book"
+    
     public var externalID: NSNumber!
     public var title: String!
     

@@ -9,6 +9,8 @@ import SwiftCodex
 @objc (Author)
 public class Author: ModelObject
 {
+    public static let entityName = "Author"
+    
     public var externalID: NSNumber!
 
     public var firstName: String?
@@ -18,7 +20,7 @@ public class Author: ModelObject
         return (lastName == nil && firstName == nil ? "Unknown" :
             lastName == nil ? firstName! :
             firstName == nil ? lastName! :
-            "\(lastName), \(firstName)")
+            "\(lastName!), \(firstName!)")
     }
     
     public var dateOfBirth: NSDate?

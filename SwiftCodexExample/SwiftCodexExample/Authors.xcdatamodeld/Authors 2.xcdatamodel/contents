@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Author" representedClassName="Author" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="Transformable" valueTransformerName="CDXDateTransformer" syncable="YES">
             <userInfo>
@@ -22,7 +22,7 @@
                 <entry key="externalKeyPath" value="book_id"/>
             </userInfo>
         </attribute>
-        <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="CDXArrayTransformer" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="CSVTransformer" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="books" inverseEntity="Author" syncable="YES"/>

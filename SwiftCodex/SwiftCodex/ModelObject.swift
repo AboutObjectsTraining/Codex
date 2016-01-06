@@ -27,14 +27,6 @@ extension NSArray
     }
 }
 
-//extension NSValueTransformer
-//{
-//    public static func valueTransformerForAttribute(attribute: NSAttributeDescription)
-//    {
-//        
-//    }
-//}
-
 public class ModelObject : NSObject
 {
     var entity: NSEntityDescription!
