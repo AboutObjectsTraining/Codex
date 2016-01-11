@@ -6,7 +6,7 @@
 import Foundation
 import SwiftCodex
 
-@objc (Author)
+@objc (CDXAuthor)
 public class Author: ModelObject
 {
     public static let entityName = "Author"

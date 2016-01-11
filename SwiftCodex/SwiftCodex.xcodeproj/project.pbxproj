@@ -11,7 +11,8 @@
 		AB0AD1621C18E51F00A5F8A2 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1611C18E51F00A5F8A2 /* ModelObject.swift */; };
 		AB0AD16B1C1B437300A5F8A2 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD16A1C1B437300A5F8A2 /* UnitTests.swift */; };
 		AB0AD16D1C1B437300A5F8A2 /* SwiftCodex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0AD1471C18E3A700A5F8A2 /* SwiftCodex.framework */; };
-		AB545E871C3C917C00FD5373 /* CSVTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB545E861C3C917C00FD5373 /* CSVTransformer.swift */; };
+		AB434F141C4412B800038C11 /* DateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB434F131C4412B800038C11 /* DateTransformer.swift */; };
+		AB545E871C3C917C00FD5373 /* CommaSeparatedValuesTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB545E861C3C917C00FD5373 /* CommaSeparatedValuesTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,8 @@
 		AB0AD1681C1B437300A5F8A2 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0AD16A1C1B437300A5F8A2 /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		AB0AD16C1C1B437300A5F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB545E861C3C917C00FD5373 /* CSVTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVTransformer.swift; sourceTree = "<group>"; };
+		AB434F131C4412B800038C11 /* DateTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformer.swift; sourceTree = "<group>"; };
+		AB545E861C3C917C00FD5373 /* CommaSeparatedValuesTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommaSeparatedValuesTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				AB0AD1611C18E51F00A5F8A2 /* ModelObject.swift */,
-				AB545E861C3C917C00FD5373 /* CSVTransformer.swift */,
+				AB545E861C3C917C00FD5373 /* CommaSeparatedValuesTransformer.swift */,
+				AB434F131C4412B800038C11 /* DateTransformer.swift */,
 				AB0AD14A1C18E3A700A5F8A2 /* SwiftCodex.h */,
 				AB0AD14C1C18E3A700A5F8A2 /* Info.plist */,
 			);
@@ -201,7 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0AD1621C18E51F00A5F8A2 /* ModelObject.swift in Sources */,
-				AB545E871C3C917C00FD5373 /* CSVTransformer.swift in Sources */,
+				AB434F141C4412B800038C11 /* DateTransformer.swift in Sources */,
+				AB545E871C3C917C00FD5373 /* CommaSeparatedValuesTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

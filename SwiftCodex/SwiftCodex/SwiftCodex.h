@@ -15,5 +15,6 @@ FOUNDATION_EXPORT double SwiftCodexVersionNumber;
 FOUNDATION_EXPORT const unsigned char SwiftCodexVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftCodex/PublicHeader.h>
-
-
+//
+//#import <SwiftCodex/ModelObject.h>
+//#import <SwiftCodex/CommaSeparatedValuesTransformer.h>

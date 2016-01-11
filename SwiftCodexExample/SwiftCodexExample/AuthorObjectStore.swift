@@ -5,6 +5,7 @@
 
 import Foundation
 import CoreData
+import SwiftCodex
 
 let ModelName = "Authors"
 let FileName = "Authors_v2"
@@ -68,6 +69,21 @@ public class AuthorObjectStore: NSObject
         authors = serializedAuthors.map {
             Author.self(dictionary: $0, entity: self.entity)
         }
+    }
+    
+    override public class func initialize()
+    {
+        guard self === AuthorObjectStore.self else { return }
+        configureValueTransformers()
+    }
+}
+
+// MARK: - Configuring Value Transformers
+extension AuthorObjectStore
+{
+    public class func configureValueTransformers()
+    {
+        NSValueTransformer.setValueTransformer(CommaSeparatedValuesTransformer(), forName: CommaSeparatedValuesTransformer.TransformerName)
     }
 }
 

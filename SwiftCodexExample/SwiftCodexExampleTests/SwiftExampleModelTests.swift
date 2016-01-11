@@ -80,7 +80,7 @@ class SwiftExampleModelTests: XCTestCase
         let s = NSClassFromString("NSString") as! NSString.Type
         print(s)
         
-        guard let BookClass: ModelObject.Type = NSClassFromString("Book") as? ModelObject.Type else {
+        guard let BookClass: ModelObject.Type = NSClassFromString("CDXBook") as? ModelObject.Type else {
             abort()
         }
         print(BookClass)

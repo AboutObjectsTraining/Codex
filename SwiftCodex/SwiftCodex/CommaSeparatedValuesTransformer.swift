@@ -3,17 +3,13 @@
 // See LICENSE.txt for this example's licensing information.
 //
 
-let CSVTransformerName = "CSVTransformerName"
 let DelimiterString = ","
 
-@objc (CSVTransformer)
-public class CSVTransformer: NSValueTransformer
+@objc (CDXCommaSeparatedValuesTransformer)
+public class CommaSeparatedValuesTransformer: NSValueTransformer
 {
-    public override class func initialize() {
-        guard self === CSVTransformer.self else { return }
-        NSValueTransformer.setValueTransformer(CSVTransformer(), forName: CSVTransformerName)
-    }
-    
+    public static let TransformerName = "CommaSeparatedValues"
+        
     override public class func transformedValueClass() -> AnyClass {
         return NSString.self
     }
