@@ -21,3 +21,16 @@ public class BooksController: UITableViewController
         controller.book = book
     }
 }
+
+extension BooksController
+{
+    @IBAction func doneEditingBook(segue: UIStoryboardSegue)
+    {
+        // TODO: save changes and update view
+    }
+    
+    @IBAction func cancelEditingBook(segue: UIStoryboardSegue)
+    {
+        // do nothing
+    }
+}

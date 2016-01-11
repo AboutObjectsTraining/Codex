@@ -20,6 +20,7 @@
 		AB0AD1C51C24B4BC00A5F8A2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1C31C24B4BC00A5F8A2 /* Book.swift */; };
 		AB0AD1C71C24B59100A5F8A2 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1C61C24B59100A5F8A2 /* Author.swift */; };
 		AB0AD1C81C24B59100A5F8A2 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD1C61C24B59100A5F8A2 /* Author.swift */; };
+		AB434F161C4429AD00038C11 /* EditBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB434F151C4429AD00038C11 /* EditBookController.swift */; };
 		AB545E7D1C3C776F00FD5373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB545E7C1C3C776F00FD5373 /* Main.storyboard */; };
 		AB545E7F1C3C77D100FD5373 /* BooksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB545E7E1C3C77D100FD5373 /* BooksController.swift */; };
 		AB545E811C3C780F00FD5373 /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB545E801C3C780F00FD5373 /* BookDetailController.swift */; };
@@ -74,6 +75,7 @@
 		AB0AD1C01C24B40000A5F8A2 /* Authors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Authors.xcdatamodel; sourceTree = "<group>"; };
 		AB0AD1C31C24B4BC00A5F8A2 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AB0AD1C61C24B59100A5F8A2 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		AB434F151C4429AD00038C11 /* EditBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookController.swift; sourceTree = "<group>"; };
 		AB545E7C1C3C776F00FD5373 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AB545E7E1C3C77D100FD5373 /* BooksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksController.swift; sourceTree = "<group>"; };
 		AB545E801C3C780F00FD5373 /* BookDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				AB545E841C3C78D000FD5373 /* AuthorDataSource.swift */,
 				AB545E7E1C3C77D100FD5373 /* BooksController.swift */,
 				AB545E801C3C780F00FD5373 /* BookDetailController.swift */,
+				AB434F151C4429AD00038C11 /* EditBookController.swift */,
 				AB545E821C3C784100FD5373 /* BookCell.swift */,
 				AB545E881C3DA52900FD5373 /* UIImage+CodexAdditions.swift */,
 				AB545E7C1C3C776F00FD5373 /* Main.storyboard */,
@@ -309,6 +312,7 @@
 				AB0AD1801C24B20B00A5F8A2 /* AppDelegate.swift in Sources */,
 				AB8C5D151C3C290100BCF5DE /* AuthorObjectStore.swift in Sources */,
 				AB0AD1C71C24B59100A5F8A2 /* Author.swift in Sources */,
+				AB434F161C4429AD00038C11 /* EditBookController.swift in Sources */,
 				AB545E891C3DA52900FD5373 /* UIImage+CodexAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

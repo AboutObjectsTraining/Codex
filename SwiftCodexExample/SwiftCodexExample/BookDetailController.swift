@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import SwiftCodex
 
 public class BookDetailController: UITableViewController
 {
@@ -11,6 +12,7 @@ public class BookDetailController: UITableViewController
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var bookImageView: UIImageView!
     
     @IBOutlet weak var firstNameLabel: UILabel!
@@ -22,6 +24,7 @@ public class BookDetailController: UITableViewController
         super.viewWillAppear(animated)
         titleLabel.text = book.title
         yearLabel.text = book.year
+        tagsLabel.text = book.transformedTags
         bookImageView.image = UIImage.image(forBook: book)
         
         if let author = book.author {
@@ -29,5 +32,15 @@ public class BookDetailController: UITableViewController
             lastNameLabel.text = author.lastName
             authorImageView.image = UIImage.image(forAuthor: author)
         }
+    }
+    
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        guard
+            let navController = segue.destinationViewController as? UINavigationController,
+            let editController = navController.childViewControllers.first as? EditBookController else {
+                return
+        }
+        editController.book = book
     }
 }
