@@ -26,7 +26,8 @@ extension BooksController
 {
     @IBAction func doneEditingBook(segue: UIStoryboardSegue)
     {
-        // TODO: save changes and update view
+        dataSource.save()
+        tableView.reloadData()
     }
     
     @IBAction func cancelEditingBook(segue: UIStoryboardSegue)

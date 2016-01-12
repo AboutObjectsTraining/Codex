@@ -77,7 +77,9 @@ extension ModelObject
         let serializedVals: NSMutableDictionary = NSMutableDictionary()
         for (_, attribute) in entity.attributesByName {
             let val = serializedValue(forAttribute: attribute)
-            serializedVals.setValue(val, forKeyPath: attribute.externalKeyPath)
+            if val !== NSNull() {
+                serializedVals.setValue(val, forKeyPath: attribute.externalKeyPath)
+            }
         }
         return serializedVals.copy() as! [String: AnyObject]
     }
@@ -86,7 +88,9 @@ extension ModelObject
         let serializedVals: NSMutableDictionary = NSMutableDictionary()
         for (_, relationship) in entity.relationshipsByName {
             let val = serializedValue(forRelationship: relationship)
-            serializedVals.setValue(val, forKeyPath: relationship.externalKeyPath)
+            if val !== NSNull() {
+                serializedVals.setValue(val, forKeyPath: relationship.externalKeyPath)
+            }
         }
         return serializedVals.copy() as! [String: AnyObject]
     }
@@ -111,7 +115,7 @@ extension ModelObject
         if let modelObjs = value as? NSArray where relationship.toMany {
             return modelObjs.dictionaryRepresentation
         }
-        else if let obj = value as? ModelObject where relationship.inverseRelationship != nil {
+        else if let obj = value as? ModelObject where relationship.inverseRelationship == nil {
             return obj.dictionaryRepresentation
         }
         

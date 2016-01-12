@@ -10,6 +10,10 @@ let CellID = "Book"
 public class AuthorDataSource: NSObject
 {
     @IBOutlet var objectStore: AuthorObjectStore!
+    
+    public func save() {
+        objectStore.save()
+    }
 }
 
 extension AuthorDataSource: UITableViewDataSource

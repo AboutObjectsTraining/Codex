@@ -51,6 +51,7 @@ public class AuthorObjectStore: NSObject
     let model: NSManagedObjectModel!
     let entity: NSEntityDescription!
     
+    var version: NSNumber
     var serializedAuthors: [[String: AnyObject]]!
     var authors: [Author]!
     
@@ -62,6 +63,13 @@ public class AuthorObjectStore: NSObject
         entity = model.entitiesByName[Author.entityName]
         
         let dict = Dictionary<String, AnyObject>.byLoading(properyListFileWithName: FileName)
+        
+        switch (dict?["version"]) {
+        case let stringVal as NSString: version = NSNumber(int: stringVal.intValue)
+        case let numberVal as NSNumber: version = numberVal
+        default:                        version = NSNumber(int: 0)
+        }
+        
         serializedAuthors = dict?["authors"] as? [[String: AnyObject]]
         
         super.init()
@@ -76,6 +84,17 @@ public class AuthorObjectStore: NSObject
         guard self === AuthorObjectStore.self else { return }
         configureValueTransformers()
     }
+    
+    public func save()
+    {
+        // TODO: add dictionaryRepresentation in an extension on Array
+        //
+        let authorDicts = (authors as NSArray).dictionaryRepresentation
+        let dict = ["version": version, "authors": authorDicts] as NSDictionary
+        if let URL = NSURL.documentDirectoryURL(forFileName: FileName, type: "plist") {
+            dict.writeToURL(URL, atomically: true)
+        }
+    }
 }
 
 // MARK: - Configuring Value Transformers
@@ -83,6 +102,7 @@ extension AuthorObjectStore
 {
     public class func configureValueTransformers()
     {
+        NSValueTransformer.setValueTransformer(DateTransformer(), forName: DateTransformer.TransformerName)
         NSValueTransformer.setValueTransformer(CommaSeparatedValuesTransformer(), forName: CommaSeparatedValuesTransformer.TransformerName)
     }
 }
