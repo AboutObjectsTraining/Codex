@@ -8,7 +8,7 @@ let DelimiterString = ","
 @objc (CDXCommaSeparatedValuesTransformer)
 public class CommaSeparatedValuesTransformer: NSValueTransformer
 {
-    public static let TransformerName = "CommaSeparatedValues"
+    public static let TransformerName = "CDXCommaSeparatedValues"
         
     override public class func transformedValueClass() -> AnyClass {
         return NSString.self

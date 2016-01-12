@@ -14,18 +14,13 @@ extension NSPropertyDescription
     }
 }
 
-extension NSArray
+extension Array where Element : ModelObject
 {
     public var dictionaryRepresentation: [[String: AnyObject]] {
-        var dicts: [[String: AnyObject]] = []
-            for currObj in self {
-                if let modelObj = currObj as? ModelObject {
-                    dicts.append(modelObj.dictionaryRepresentation)
-                }
-            }
-        return dicts
+        return self.map { $0.dictionaryRepresentation }
     }
 }
+
 
 public class ModelObject : NSObject
 {
@@ -112,14 +107,15 @@ extension ModelObject
             return NSNull()
         }
         
-        if let modelObjs = value as? NSArray where relationship.toMany {
-            return modelObjs.dictionaryRepresentation
+        var serializedVal: AnyObject = NSNull()
+        if let modelObjs = value as? [ModelObject] where relationship.toMany {
+            serializedVal = modelObjs.dictionaryRepresentation
         }
         else if let obj = value as? ModelObject where relationship.inverseRelationship == nil {
-            return obj.dictionaryRepresentation
+            serializedVal = obj.dictionaryRepresentation
         }
         
-        return NSNull()
+        return serializedVal
     }
 }
 

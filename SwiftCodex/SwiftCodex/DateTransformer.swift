@@ -6,7 +6,7 @@
 @objc (CDXDateTransformer)
 public class DateTransformer: NSValueTransformer
 {
-    public static let TransformerName = "Date"
+    public static let TransformerName = "CDXDate"
     public static let SerializedDateFormat = "yyyy-MM-dd"
     
     public static let serializedDateFormatter: NSDateFormatter = {

@@ -10,24 +10,18 @@ import SwiftCodex
 let ModelName = "Authors"
 let FileName = "Authors_v2"
 
-extension Dictionary
+
+extension NSDictionary
 {
-    static func byLoading(properyListFileWithName fileName: String) -> [String: AnyObject]?
+    public class func dictionary(contentsOfPropertyListFile fileName: String) -> NSDictionary?
     {
-        if let dict = self.byLoading(NSURL.documentDirectoryURL(forFileName: fileName, type: "plist")) {
-            return dict
+        if  let URL = NSURL.documentDirectoryURL(forFileName: fileName, type: "plist"),
+            let dict = NSDictionary(contentsOfURL: URL) {
+                return dict
         }
-        return self.byLoading(NSURL.bundleDirectoryURL(forFileName: fileName, type: "plist"))
-    }
-    
-    static func byLoading(propertyListURL: NSURL?) -> [String: AnyObject]?
-    {
-        guard let URL = propertyListURL else { return nil }
-        return NSDictionary(contentsOfURL: URL) as? [String: AnyObject]
-    }
-    
-    static func hello() -> String {
-        return "Hello"
+        
+        guard let URL = NSURL.bundleDirectoryURL(forFileName: fileName, type: "plist") else { return nil }
+        return NSDictionary(contentsOfURL: URL)
     }
 }
 
@@ -52,29 +46,21 @@ public class AuthorObjectStore: NSObject
     let entity: NSEntityDescription!
     
     var version: NSNumber
-    var serializedAuthors: [[String: AnyObject]]!
-    var authors: [Author]!
+//    var serializedAuthors: [[String: AnyObject]]!
+    var authors: [Author]?
     
     required override public init()
     {
         let modelURL = NSBundle(forClass: AuthorObjectStore.self).URLForResource(ModelName, withExtension: "momd")
         model = NSManagedObjectModel(contentsOfURL: modelURL!) // Crash here if model URL is invalid.
-        
         entity = model.entitiesByName[Author.entityName]
         
-        let dict = Dictionary<String, AnyObject>.byLoading(properyListFileWithName: FileName)
-        
-        switch (dict?["version"]) {
-        case let stringVal as NSString: version = NSNumber(int: stringVal.intValue)
-        case let numberVal as NSNumber: version = numberVal
-        default:                        version = NSNumber(int: 0)
-        }
-        
-        serializedAuthors = dict?["authors"] as? [[String: AnyObject]]
-        
+        let dict = NSDictionary.dictionary(contentsOfPropertyListFile: FileName)
+        version = dict?["version"] as? NSNumber ?? NSNumber(int: 0)
         super.init()
         
-        authors = serializedAuthors.map {
+        let serializedAuthors = dict?["authors"] as? [[String: AnyObject]]
+        authors = serializedAuthors?.map {
             Author.self(dictionary: $0, entity: self.entity)
         }
     }
@@ -87,12 +73,14 @@ public class AuthorObjectStore: NSObject
     
     public func save()
     {
-        // TODO: add dictionaryRepresentation in an extension on Array
-        //
-        let authorDicts = (authors as NSArray).dictionaryRepresentation
-        let dict = ["version": version, "authors": authorDicts] as NSDictionary
+        guard let authors = self.authors else { return }
+        
+        let serializedAuthors = [
+            "version": version,
+            "authors": authors.dictionaryRepresentation]
+        
         if let URL = NSURL.documentDirectoryURL(forFileName: FileName, type: "plist") {
-            dict.writeToURL(URL, atomically: true)
+            (serializedAuthors as NSDictionary).writeToURL(URL, atomically: true)
         }
     }
 }
@@ -112,25 +100,19 @@ extension AuthorObjectStore
 
 public extension AuthorObjectStore
 {
-    public func titleForSection(section: NSInteger) -> String
-    {
-        return authors[section].fullName
+    public func titleForSection(section: NSInteger) -> String {
+        return authors?[section].fullName ?? ""
     }
     
-    public func numberOfSections() -> NSInteger
-    {
-        return authors.count
+    public func numberOfSections() -> NSInteger {
+        return authors?.count ?? 0
     }
     
-    public func numberOfRows(inSection section: NSInteger) -> NSInteger
-    {
-        let books = authors[section].books
-        return books == nil ? 0 : books!.count
+    public func numberOfRows(inSection section: NSInteger) -> NSInteger {
+        return authors?[section].books?.count ?? 0
     }
     
-    public func bookAtIndexPath(indexPath: NSIndexPath) -> Book?
-    {
-        let books = authors[indexPath.section].books
-        return books == nil ? nil : books![indexPath.row]
+    public func bookAtIndexPath(indexPath: NSIndexPath) -> Book? {
+        return authors?[indexPath.section].books?[indexPath.row]
     }
 }

@@ -21,18 +21,16 @@ public class Book: ModelObject
     
     public var transformedTags: String? {
         get {
-            guard
-                let transformer = NSValueTransformer(forName: CommaSeparatedValuesTransformer.TransformerName),
-                let tagsStr = transformer.transformedValue(tags) as? String else { return nil }
-            return tagsStr
+            return tagsTransformer?.transformedValue(tags) as? String
         }
         set {
-            if  let transformer = NSValueTransformer(forName: CommaSeparatedValuesTransformer.TransformerName),
-                let tags = transformer.reverseTransformedValue(newValue) as? [String] {
-                    self.tags = tags
-            }
+            self.tags = tagsTransformer?.reverseTransformedValue(newValue) as? [String]
         }
     }
+    
+    var tagsTransformer: NSValueTransformer? =  {
+        return NSValueTransformer(forName: CommaSeparatedValuesTransformer.TransformerName)
+    }()
     
     override public var description: String {
         return "\(super.description) title: \(title); year: \(year), tags: \(tags), externalID: \(externalID)"
