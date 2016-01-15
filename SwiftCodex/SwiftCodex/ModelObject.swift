@@ -6,6 +6,7 @@
 import Foundation
 import CoreData
 
+public let KVCPropertyPrefix = "kvc_"
 
 extension NSPropertyDescription
 {
@@ -21,7 +22,6 @@ extension Array where Element : ModelObject
     }
 }
 
-
 public class ModelObject : NSObject
 {
     var entity: NSEntityDescription!
@@ -34,6 +34,29 @@ public class ModelObject : NSObject
         setRelationshipValuesByDeserializing(dictionary)
     }
 }
+
+
+// MARK: - KVC Customization
+
+extension ModelObject
+{
+    override public func setNilValueForKey(key: String) {
+        if !key.hasPrefix(KVCPropertyPrefix) {
+            super.setNilValueForKey(key)
+        }
+    }
+    
+    override public func valueForUndefinedKey(key: String) -> AnyObject? {
+        return key.hasPrefix(KVCPropertyPrefix) ? nil : super.valueForKey(KVCPropertyPrefix + key)
+    }
+    
+    override public func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        if !key.hasPrefix(KVCPropertyPrefix) {
+            super.setValue(value, forKey: KVCPropertyPrefix + key)
+        }
+    }
+}
+
 
 // MARK: - Serializing
 

@@ -33,6 +33,19 @@ class SwiftExampleModelTests: XCTestCase
     }
     
     
+//    func testBoolean()
+//    {
+//        let authorDict = authorDicts[0]
+//        var bookDict = authorDict["books"]![0] as! [String: AnyObject]
+//        bookDict["favorite"] = "YES"
+//        
+//        let bookEntity = model.entitiesByName["Book"]!
+//        let book = Book(dictionary: bookDict, entity: bookEntity)
+//        
+//        print(book)
+//
+//    }
+    
     
     func testEntityDescriptions()
     {

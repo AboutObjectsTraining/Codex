@@ -13,6 +13,8 @@ public class EditBookController: UITableViewController
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var tagsField: UITextField!
     
+    @IBOutlet var heartLabel: UILabel!
+    
     public override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -21,6 +23,25 @@ public class EditBookController: UITableViewController
         tagsField.text = book.transformedTags
         
         titleField.becomeFirstResponder()
+    }
+    
+    func toggleFavorite()
+    {
+        if book.favorite == false {
+            book.favorite = true
+            heartLabel.text = FavoriteSymbol.FilledHeart.rawValue
+            heartLabel.font = UIFont.systemFontOfSize(27.0)
+        }
+        else {
+            book.favorite = false
+            heartLabel.text = FavoriteSymbol.BlankHeart.rawValue
+            heartLabel.font = UIFont.systemFontOfSize(30.0)
+        }
+    }
+    
+    override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        toggleFavorite()
     }
     
     func updateBook()

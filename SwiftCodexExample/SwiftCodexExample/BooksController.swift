@@ -29,9 +29,14 @@ extension BooksController
         dataSource.save()
         tableView.reloadData()
     }
-    
-    @IBAction func cancelEditingBook(segue: UIStoryboardSegue)
+}
+
+// MARK: - UITableViewDelegate Methods
+
+extension BooksController
+{
+    override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
     {
-        // do nothing
+        cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.oddRowColor() : UIColor.evenRowColor()
     }
 }

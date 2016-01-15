@@ -10,6 +10,11 @@ import SwiftCodex
 let ModelName = "Authors"
 let FileName = "Authors_v2"
 
+enum FavoriteSymbol: String {
+    case FilledHeart = "♥️"
+    case BlankHeart = "♡"
+}
+
 
 extension NSDictionary
 {
@@ -46,7 +51,6 @@ public class AuthorObjectStore: NSObject
     let entity: NSEntityDescription!
     
     var version: NSNumber
-//    var serializedAuthors: [[String: AnyObject]]!
     var authors: [Author]?
     
     required override public init()

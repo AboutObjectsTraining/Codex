@@ -14,10 +14,18 @@ public class Book: ModelObject
     public var externalID: NSNumber!
     public var title: String!
     
+    public var favorite: Bool?
+    var kvc_favorite: Bool {
+        get { return favorite ?? false }
+        set { favorite = Optional(newValue) }
+    }
+
     public var year: String?
     public var tags: [String]?
     
     public var author: Author?
+    
+    // TODO: Fix this!
     
     public var transformedTags: String? {
         get {

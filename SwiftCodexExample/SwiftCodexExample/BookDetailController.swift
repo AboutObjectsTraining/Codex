@@ -15,6 +15,7 @@ public class BookDetailController: UITableViewController
     @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var bookImageView: UIImageView!
     
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var authorImageView: UIImageView!
@@ -22,16 +23,18 @@ public class BookDetailController: UITableViewController
     public override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        titleLabel.text = book.title
         yearLabel.text = book.year
         tagsLabel.text = book.transformedTags
         bookImageView.image = UIImage.image(forBook: book)
         
         if let author = book.author {
-            firstNameLabel.text = author.firstName
-            lastNameLabel.text = author.lastName
             authorImageView.image = UIImage.image(forAuthor: author)
         }
+    }
+    
+    @IBAction func cancelEditingBook(segue: UIStoryboardSegue)
+    {
+        // do nothing
     }
     
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -42,5 +45,18 @@ public class BookDetailController: UITableViewController
                 return
         }
         editController.book = book
+    }
+    
+    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        let heart = "  " + (book.favorite == true ?
+            FavoriteSymbol.FilledHeart.rawValue :
+            FavoriteSymbol.BlankHeart.rawValue)
+        
+        switch (section) {
+        case 0: return book.title + heart
+        case 1: return book.author?.fullName
+        default: return nil
+        }
     }
 }

@@ -82,6 +82,7 @@
 		AB545E821C3C784100FD5373 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		AB545E841C3C78D000FD5373 /* AuthorDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorDataSource.swift; sourceTree = "<group>"; };
 		AB545E881C3DA52900FD5373 /* UIImage+CodexAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CodexAdditions.swift"; sourceTree = "<group>"; };
+		AB55BC6C1C45CA3300B18080 /* KVCPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = KVCPlayground.playground; sourceTree = "<group>"; };
 		AB8C5D141C3C290100BCF5DE /* AuthorObjectStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorObjectStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0AD1941C24B20B00A5F8A2 /* SwiftExampleModelTests.swift */,
+				AB55BC6C1C45CA3300B18080 /* KVCPlayground.playground */,
 				AB0AD1961C24B20B00A5F8A2 /* Info.plist */,
 			);
 			path = SwiftCodexExampleTests;
