@@ -19,13 +19,22 @@ public class Book: ModelObject
         get { return favorite ?? false }
         set { favorite = Optional(newValue) }
     }
-
+    
+    // TODO: Add to xcmodel
+    //
+    public var rating: Int?
+    var kvc_rating: Int {
+        get { return rating ?? 0 }
+        set { rating = Optional(newValue) }
+    }
+    
     public var year: String?
     public var tags: [String]?
     
     public var author: Author?
     
-    // TODO: Fix this!
+    
+    // TODO: Automate UI transformations
     
     public var transformedTags: String? {
         get {

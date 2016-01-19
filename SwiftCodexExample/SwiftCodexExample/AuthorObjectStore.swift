@@ -10,11 +10,6 @@ import SwiftCodex
 let ModelName = "Authors"
 let FileName = "Authors_v2"
 
-enum FavoriteSymbol: String {
-    case FilledHeart = "♥️"
-    case BlankHeart = "♡"
-}
-
 
 extension NSDictionary
 {

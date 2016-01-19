@@ -44,6 +44,8 @@ extension ModelObject
         if !key.hasPrefix(KVCPropertyPrefix) {
             super.setNilValueForKey(key)
         }
+        // Silently ignore prefixed keys, so if we're initializing a new instance,
+        // the property value will remain .None.
     }
     
     override public func valueForUndefinedKey(key: String) -> AnyObject? {
@@ -51,7 +53,9 @@ extension ModelObject
     }
     
     override public func setValue(value: AnyObject?, forUndefinedKey key: String) {
-        if !key.hasPrefix(KVCPropertyPrefix) {
+        if key.hasPrefix(KVCPropertyPrefix) {
+            super.setValue(value, forUndefinedKey: key)
+        } else {
             super.setValue(value, forKey: KVCPropertyPrefix + key)
         }
     }

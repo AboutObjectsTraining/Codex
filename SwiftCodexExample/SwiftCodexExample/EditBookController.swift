@@ -13,7 +13,9 @@ public class EditBookController: UITableViewController
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var tagsField: UITextField!
     
-    @IBOutlet var heartLabel: UILabel!
+    @IBOutlet weak var heartLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingStepper: UIStepper!
     
     public override func viewWillAppear(animated: Bool)
     {
@@ -22,26 +24,31 @@ public class EditBookController: UITableViewController
         yearField.text = book.year
         tagsField.text = book.transformedTags
         
+        heartLabel.text = FavoriteSymbol.stringValue(book.favorite)
+        ratingLabel.text = Rating.stringValue(book.rating)
+        ratingStepper.value = Double(book.rating ?? 0)
+        
+        
         titleField.becomeFirstResponder()
+    }
+    
+    @IBAction func rate(sender: UIStepper)
+    {
+        book.rating = Int(sender.value)
+        ratingLabel.text = Rating.stringValue(book.rating)
     }
     
     func toggleFavorite()
     {
-        if book.favorite == false {
-            book.favorite = true
-            heartLabel.text = FavoriteSymbol.FilledHeart.rawValue
-            heartLabel.font = UIFont.systemFontOfSize(27.0)
-        }
-        else {
-            book.favorite = false
-            heartLabel.text = FavoriteSymbol.BlankHeart.rawValue
-            heartLabel.font = UIFont.systemFontOfSize(30.0)
-        }
+        book.favorite = book.favorite == nil || book.favorite == false ? true : false
+        heartLabel.text = FavoriteSymbol.stringValue(book.favorite)
     }
     
     override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        toggleFavorite()
+        if indexPath.section == 0 && indexPath.row == 0 {
+            toggleFavorite()
+        }
     }
     
     func updateBook()

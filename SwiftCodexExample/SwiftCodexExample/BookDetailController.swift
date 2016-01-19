@@ -10,22 +10,21 @@ public class BookDetailController: UITableViewController
 {
     var book: Book!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
-    @IBOutlet weak var bookImageView: UIImageView!
+    @IBOutlet weak var ratingLabel: UILabel!
     
-    @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var authorImageView: UIImageView!
     
     public override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
+
+        bookImageView.image = UIImage.image(forBook: book)
         yearLabel.text = book.year
         tagsLabel.text = book.transformedTags
-        bookImageView.image = UIImage.image(forBook: book)
+        ratingLabel.text = Rating.stringValue(book.rating)
         
         if let author = book.author {
             authorImageView.image = UIImage.image(forAuthor: author)
